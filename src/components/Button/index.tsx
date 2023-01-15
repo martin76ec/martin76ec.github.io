@@ -14,4 +14,4 @@ function Icon({ children }) {
 
 Button.Icon = Icon
 
-export default Button
+export { Button };

@@ -7,8 +7,7 @@ function useScrollProgress() {
     const updateScrollCompletion = () => {
       const currentProgress = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;
-      const percentage = (currentProgress / scrollHeight).toFixed(2) * 100;
-      console.log(percentage);
+      const percentage = Number((currentProgress / scrollHeight).toFixed(2)) * 100;
       if (scrollHeight) setProgress(percentage);
     };
 

@@ -8,9 +8,13 @@ const __dirname = dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind()],
-  site: 'https://martin76ec.github.io',
-  base: '/portfolio',
+  integrations: [react(), tailwind({
+    config: {
+      path: './tailwind.config.cjs'
+    }
+  })],
+//  site: 'https://martin76ec.github.io',
+ // base: '/portfolio',
   vite: {
     resolve: {
       alias: {
@@ -18,7 +22,7 @@ export default defineConfig({
         '@hooks': resolve(__dirname, 'src/hooks'),
         '@layouts': resolve(__dirname, './src/layouts'),
         '@pages': resolve(__dirname, 'src/pages'),
-        '@public': resolve(__dirname, './public')
+        '@assets': resolve(__dirname, 'src/assets')
       }
     }
   }
