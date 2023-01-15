@@ -1,0 +1,19 @@
+---
+import Navbar from '../components/Navbar'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Martín Larrea</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <nav class='sticky top-0 bg-black'>
+      <Navbar client:load/> 
+    </nav>
+    <article>
+      <slot />
+    </article>
+  </body>
+</html>
