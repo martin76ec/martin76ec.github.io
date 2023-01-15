@@ -9,6 +9,8 @@ const __dirname = dirname(__filename)
 
 export default defineConfig({
   integrations: [react(), tailwind()],
+  site: 'https://martin76ec.github.io',
+  base: '/portfolio',
   vite: {
     resolve: {
       alias: {
