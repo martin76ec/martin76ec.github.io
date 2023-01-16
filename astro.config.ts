@@ -10,11 +10,9 @@ const __dirname = dirname(__filename);
 export default defineConfig({
   integrations: [react(), tailwind({
     config: {
-      path: './tailwind.config.cjs'
+      path: './tailwind.config.ts'
     }
   })],
-//  site: 'https://martin76ec.github.io',
- // base: '/portfolio',
   vite: {
     resolve: {
       alias: {
