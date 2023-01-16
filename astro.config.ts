@@ -13,6 +13,8 @@ export default defineConfig({
       path: './tailwind.config.ts'
     }
   })],
+  site: 'https://martin76ec.github.io',
+  base: '/portfolio',
   vite: {
     resolve: {
       alias: {
