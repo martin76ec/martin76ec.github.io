@@ -1,5 +1,5 @@
 import { useScrollProgress } from '@hooks';
-import LogoWhite from '@assets/logo-white.png';
+import LogoWhite from '@assets/logo-white-alt.png';
 
 function Navbar() {
   const progress = useScrollProgress();
