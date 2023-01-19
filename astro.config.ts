@@ -14,7 +14,6 @@ export default defineConfig({
     }
   })],
   site: 'https://martin76ec.github.io',
-  base: '/portfolio',
   vite: {
     resolve: {
       alias: {
