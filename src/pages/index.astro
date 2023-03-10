@@ -1,8 +1,27 @@
 ---
+import '@fontsource/anton'
+import '@fontsource/work-sans'
 import Layout from '../layouts/index.astro'
+import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+import { Timeline } from "@components";
 ---
 <Layout>
-  <div class='py-20 px-20 md:px-40 xl:px-80 flex flex-col gap-16 text-2xl font-anton bg-black text-white'>
+  <div class='h-[100vh] md:h-[90vh]' slot='main'>
+    <div class="flex flex-col justify-center h-full gap-10">
+      <LottieAnimation src="../assets/rocker-launch.json" autoplay="visible" />
+      <p class='font-anton text-9xl text-center text-white uppercase'>martín larrea</p>
+      <div>
+        <p class='font-[Work Sans] font-bold tracking-[0.1em] text-3xl text-center text-white capitalize'>entrepreneur</p>
+        <p class='font-[Work Sans] font-bold tracking-[0.1em] text-3xl text-center text-white capitalize'>software engineer</p>
+      </div>
+    </div>
+  </div>
+  <div slot='about-me'>
+    <div class='flex flex-row md:flex-col justify-center items-center'>
+      <Timeline></Timeline>
+    </div>
+  </div>
+  <div class='py-20 px-20 md:px-40 xl:px-80 flex flex-col gap-16 text-2xl font-[Work Sanss] bg-black text-white' slot='projects'>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam laboriosam porro omnis tempora esse possimus ipsum sed similique tempore doloremque numquam adipisci, eius eaque corporis nesciunt architecto voluptatem modi maiores!</p>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam laboriosam porro omnis tempora esse possimus ipsum sed similique tempore doloremque numquam adipisci, eius eaque corporis nesciunt architecto voluptatem modi maiores!</p>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam laboriosam porro omnis tempora esse possimus ipsum sed similique tempore doloremque numquam adipisci, eius eaque corporis nesciunt architecto voluptatem modi maiores!</p>
