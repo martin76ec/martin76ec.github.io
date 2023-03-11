@@ -4,9 +4,24 @@ import '@fontsource/work-sans'
 import Layout from '../layouts/index.astro'
 import LottieAnimation from "astro-integration-lottie/Lottie.astro";
 import { Timeline } from "@components";
+
+const milestones = [
+  {
+    year: 2018,
+    description: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
+  },
+  {
+    year: 2019,
+    description: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
+  },
+  {
+    year: 2020,
+    description: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
+  }
+];
 ---
 <Layout>
-  <div class='h-[100vh] md:h-[90vh]' slot='main'>
+  <div class='h-[80vh]' slot='main'>
     <div class="flex flex-col justify-center h-full gap-10">
       <LottieAnimation src="../assets/rocker-launch.json" autoplay="visible" />
       <p class='font-anton text-9xl text-center text-white uppercase'>martín larrea</p>
@@ -18,7 +33,7 @@ import { Timeline } from "@components";
   </div>
   <div slot='about-me'>
     <div class='flex flex-row md:flex-col justify-center items-center'>
-      <Timeline></Timeline>
+      <Timeline milestones={milestones}/>
     </div>
   </div>
   <div class='py-20 px-20 md:px-40 xl:px-80 flex flex-col gap-16 text-2xl font-[Work Sanss] bg-black text-white' slot='projects'>
