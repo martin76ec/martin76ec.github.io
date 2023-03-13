@@ -1,6 +1,6 @@
 function Year({ className, children }) {
   return (
-    <div className={`flex items-center w-full sm:text-[50px] md:text-[80] lg:text-[100px] ${className}`}>
+    <div className={`flex items-center w-full text-[50px] md:text-[80] lg:text-[100px] ${className}`}>
       <p className='font-black text-white'>{children}</p>
     </div>
   );
@@ -16,7 +16,7 @@ function Divider() {
 
 function Description({ className, children }) {
   return (
-    <div className={`flex justify-center items-center sm:text-[15px] lg:text-[30px] md:text-[20px] text-4xl text-white ${className}`}>
+    <div className={`flex justify-center items-center text-[15px] lg:text-[30px] md:text-[20px] text-4xl text-white ${className}`}>
       <p>{children}</p>
     </div >
   );
