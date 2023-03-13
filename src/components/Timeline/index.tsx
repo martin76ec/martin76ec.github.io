@@ -1,6 +1,6 @@
-function Year({ children }) {
+function Year({ className, children }) {
   return (
-    <div className={`flex justify-center items-center w-full text-[100px]`}>
+    <div className={`flex items-center w-full sm:text-[50px] md:text-[80] lg:text-[100px] ${className}`}>
       <p className='font-black text-white'>{children}</p>
     </div>
   );
@@ -14,11 +14,11 @@ function Divider() {
   );
 }
 
-function Description({ children }) {
+function Description({ className, children }) {
   return (
-    <div className='flex justify-center items-center text-[30px]'>
-      <p className='text-4xl text-white'>{children}</p>
-    </div>
+    <div className={`flex justify-center items-center sm:text-[15px] lg:text-[30px] md:text-[20px] text-4xl text-white ${className}`}>
+      <p>{children}</p>
+    </div >
   );
 }
 
@@ -27,11 +27,11 @@ function Timestamp({ children, reverse }) {
 
   return (
     <div className='grid grid-cols-3 w-[80%] h-[80vh]'>
-      {reverse && <Year>{year}</Year>}
-      {!reverse && <Description>{description}</Description>}
+      {reverse && <Year className='justify-start'>{year}</Year>}
+      {!reverse && <Description className='text-left'>{description}</Description>}
       <Divider />
-      {reverse && <Description>{description}</Description>}
-      {!reverse && <Year>{year}</Year>}
+      {reverse && <Description className='text-right'>{description}</Description>}
+      {!reverse && <Year className='justify-end'>{year}</Year>}
     </div>
   );
 }

@@ -1,25 +1,27 @@
 ---
-import { Navbar } from '../components';
+import { Navbar } from "../components";
 ---
 
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Martín Larrea</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body class='bg-black'>
-    <nav class='sticky hidden md:block md:top-0 bg-black/90 z-5'>
-      <Navbar client:idle/> 
+  <body class="bg-black">
+    <nav class="sticky hidden md:block md:top-0 bg-black/90 z-10">
+      <Navbar client:idle />
     </nav>
     <article>
-      <slot name='main'/>
-      <slot name='about-me'/>
-      <slot name='projects'/>
-      <slot name='social'/>
+      <slot name="main" />
+      <slot name="about-me" />
+      <slot name="projects" />
+      <slot name="social" />
     </article>
-    <nav class='absolute sticky w-full bottom-0 md:hidden md:top-0 bg-black/90 z-1'>
-      <Navbar client:idle/> 
+    <nav
+      class="absolute sticky w-full bottom-0 md:hidden md:top-0 bg-black/90 z-10"
+    >
+      <Navbar client:idle />
     </nav>
   </body>
 </html>
