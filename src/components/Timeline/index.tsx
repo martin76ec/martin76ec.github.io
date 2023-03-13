@@ -1,6 +1,6 @@
 function Year({ className, children }) {
   return (
-    <div className={`flex items-center w-full text-[50px] md:text-[80] lg:text-[100px] ${className}`}>
+    <div className={`flex items-center w-full text-[30px] md:text-[80] lg:text-[100px] ${className}`}>
       <p className='font-black text-white'>{children}</p>
     </div>
   );
