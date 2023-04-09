@@ -1,5 +1,6 @@
 ---
 import { Navbar } from "../components";
+import { RainbowCursor } from "../components";
 ---
 
 <html lang="en">
@@ -9,19 +10,22 @@ import { Navbar } from "../components";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body class="bg-black">
-    <nav class="sticky hidden md:block md:top-0 bg-black/90 z-10">
-      <Navbar client:idle />
-    </nav>
-    <article>
-      <slot name="main" />
-      <slot name="about-me" />
-      <slot name="projects" />
-      <slot name="social" />
-    </article>
-    <nav
-      class="absolute sticky w-full bottom-0 md:hidden md:top-0 bg-black/90 z-10"
-    >
-      <Navbar client:idle />
-    </nav>
+    <RainbowCursor client:idle />
+    <div class="backdrop-blur-[12vmax]">
+      <nav class="sticky hidden md:block md:top-0 bg-black/90 z-10">
+        <Navbar client:idle />
+      </nav>
+      <article>
+        <slot name="main" />
+        <slot name="about-me" />
+        <slot name="projects" />
+        <slot name="social" />
+      </article>
+      <nav
+        class="absolute sticky w-full bottom-0 md:hidden md:top-0 bg-black/90 z-10"
+      >
+        <Navbar client:idle />
+      </nav>
+    </div>
   </body>
 </html>

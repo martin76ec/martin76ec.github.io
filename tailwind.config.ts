@@ -1,21 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  mode: 'jit',
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  mode: "jit",
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "media",
   theme: {
     colors: {
-        purple: '#814077',
-        black: '#333233',
-        blue: '#2E519E',
-        white: '#FFFFFF',
+      purple: "#814077",
+      black: "#333233",
+      blue: "#2E519E",
+      white: "#FFFFFF",
     },
     fontFamily: {
-      'anton': ['Anton']
-    }
+      anton: ["Anton"],
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};
