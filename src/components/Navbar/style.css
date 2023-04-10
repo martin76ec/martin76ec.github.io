@@ -1,0 +1,44 @@
+.loader {
+  --s: 30px;
+  --b: 20px;
+
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 50%;
+  display: none;
+  animation: fadeIn 0.5s linear;
+}
+
+.loader::before {
+  content: "";
+  background: linear-gradient(to right, #814077, #2e519e);
+  --_g: calc(-0.6 * var(--s)), #0000 calc(99% - var(--b)),
+    #000 calc(101% - var(--b)) 99%, #0000 101%;
+  --_r: calc(1.166 * var(--s) + var(--b) / 2) at left 50%;
+  -webkit-mask: radial-gradient(var(--_r) bottom var(--_g)) calc(50% - var(--s))
+      calc(50% - var(--s)) / calc(4 * var(--s)) calc(2 * var(--s)),
+    radial-gradient(var(--_r) top var(--_g)) calc(50% + var(--s))
+      calc(50% + var(--s)) / calc(4 * var(--s)) calc(2 * var(--s));
+  animation: m 7s infinite linear;
+}
+
+@keyframes m {
+  to {
+    -webkit-mask-position: calc(50% - 5 * var(--s)) calc(50% - var(--s)),
+      calc(50% - 3 * var(--s)) calc(50% + var(--s));
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

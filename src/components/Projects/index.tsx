@@ -3,38 +3,44 @@ import { useEffect, useRef } from "react";
 const letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
 
 function Project() {
-  const ref = useRef(null);
+  const container = useRef(null);
+  const text = useRef(null);
+
+  const mouseover = () => {
+    let iterations = 0;
+
+    const interval = setInterval(() => {
+      text.current.innerText = text.current.innerText
+        .split("")
+        .map((letter, index) => {
+          if (index < iterations) return text.current.dataset.value[index];
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+
+      if (iterations >= text.current.dataset.value.length)
+        clearInterval(interval);
+      iterations += 1 / 3;
+    }, 30);
+  };
 
   useEffect(() => {
-    ref.current.onmouseover = (event) => {
-      let iterations = 0;
-
-      const interval = setInterval(() => {
-        event.target.innerText = event.target.innerText
-          .split("")
-          .map((letter, index) => {
-            if (index < iterations) return event.target.dataset.value[index];
-            return letters[Math.floor(Math.random() * 26)];
-          })
-          .join("");
-
-        if (iterations >= event.target.dataset.value.length)
-          clearInterval(interval);
-        iterations += 1 / 3;
-      }, 30);
-    };
+    container.current.addEventListener("mouseenter", mouseover);
 
     return () => {
-      ref.current.onmouseover = null;
+      container.current.removeEventListener("mouseenter", mouseover);
     };
   }, []);
 
   return (
-    <div className="relative h-[300px] w-full h-full bg-black/80 backdrop-blur-xl rounded-xl">
+    <div
+      className="relative h-[300px] w-full h-full bg-black/80 backdrop-blur-xl rounded-xl"
+      ref={container}
+    >
       <p
         className="w-full h-full flex items-center justify-center text-white text-4xl uppercase font-black"
-        ref={ref}
         data-value="Project"
+        ref={text}
       >
         Project
       </p>

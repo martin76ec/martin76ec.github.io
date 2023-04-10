@@ -4,7 +4,7 @@
   }
 
   50% {
-    scale: 1 1.5;
+    scale: 1 2;
   }
 
   to {
@@ -21,6 +21,6 @@
   top: 50%;
   translate: -50% -50%;
   border-radius: 50%;
-  animation: rotate 20s infinite;
+  animation: rotate 30s infinite;
   opacity: 0.8;
 }
