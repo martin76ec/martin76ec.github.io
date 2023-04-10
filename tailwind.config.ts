@@ -6,6 +6,8 @@ export default {
   theme: {
     colors: {
       purple: "#814077",
+      scampi: "#645aa3",
+      bondiBlue: "#00a1ae",
       black: "#333233",
       blue: "#2E519E",
       white: "#FFFFFF",

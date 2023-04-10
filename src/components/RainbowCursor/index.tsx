@@ -13,13 +13,17 @@ function RainbowCursor() {
           left: `${clientX}px`,
           top: `${window.scrollY + clientY}px`,
         },
-        { duration: 5000, fill: "forwards" }
+        { duration: 3000, fill: "forwards" }
       );
     };
   }, []);
 
   return (
-    <div id="blob" className="bg-gradient-to-r from-purple to-blue" ref={ref} />
+    <div
+      id="blob"
+      className="bg-gradient-to-r from-scampi to-bondiBlue"
+      ref={ref}
+    />
   );
 }
 

@@ -10,7 +10,9 @@ import { RainbowCursor } from "../components";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body class="bg-black">
-    <RainbowCursor client:idle />
+    <div class="relative h-[100%] w-[100%] bg-blue">
+      <RainbowCursor client:idle />
+    </div>
     <div class="backdrop-blur-[12vmax]">
       <nav class="sticky hidden md:block md:top-0 bg-black/90 z-10">
         <Navbar client:idle />
