@@ -4,11 +4,28 @@
   }
 
   50% {
-    scale: 1 2;
+    scale: 1;
   }
 
   to {
     rotate: 360deg;
+  }
+}
+
+@keyframes liquid {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background-size: 100% 100%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    background-size: 300% 100%;
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background-size: 100% 100%;
   }
 }
 
@@ -20,7 +37,7 @@
   left: 50%;
   top: 50%;
   translate: -50% -50%;
-  border-radius: 50%;
-  animation: rotate 30s infinite;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: rotate 70s infinite, liquid 8s ease-in-out infinite;
   opacity: 0.8;
 }
