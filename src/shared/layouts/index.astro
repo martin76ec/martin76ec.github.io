@@ -1,0 +1,24 @@
+---
+import LogoWhite from "@lib/assets/logo-white.svg";
+import { Navbar } from "@components/navbar";
+import "@radix-ui/themes/styles.css";
+import "@styles/global.css";
+---
+
+<script is:inline>
+  document.documentElement.classList.add("dark");
+</script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href={LogoWhite.src} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Martín Larrea</title>
+  </head>
+  <body class="bg-background">
+    <Navbar client:only />
+    <slot />
+  </body>
+</html>

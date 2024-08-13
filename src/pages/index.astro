@@ -1,0 +1,32 @@
+---
+import "@radix-ui/themes/styles.css";
+import Layout from "@layouts/index.astro";
+import { cn } from "@lib/utils";
+import { AboutMe } from "@components/content/about-me";
+import { Summary } from "@components/content/summary";
+---
+
+<Layout>
+  <div class="flex w-full justify-center py-8 lg:py-48">
+    <div
+      class={cn(
+        "lg:flex",
+        "gap-10 lg:gap-2 lg:justify-between",
+        "text-foreground",
+        "w-full max-w-screen-xl pl-10",
+        "max-h-screen"
+      )}
+    >
+      <div class="fixed hidden h-full max-w-fit lg:block">
+        <AboutMe className="h-2/3" />
+      </div>
+      <div class="hidden h-screen w-1/2 lg:block"></div>
+      <div class="flex h-screen w-full flex-col gap-16 lg:w-1/2">
+        <AboutMe className="w-full lg:hidden" />
+        <Summary />
+        <div class="block h-1/2 w-full lg:hidden">&nbsp;</div>
+        <div class="block h-1/2 w-full lg:hidden">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+</Layout>
