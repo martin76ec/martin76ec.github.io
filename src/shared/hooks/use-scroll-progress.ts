@@ -1,21 +1,18 @@
 import { useEffect, useState } from "react";
 
-export function useScrollProgress(element: string) {
+export function useScrollProgress() {
   const [progress, setProgress] = useState(0);
-  const content = document.getElementById(element);
 
   useEffect(() => {
     const handleScroll = () => {
-      const content = document.getElementById(element);
-      if (!content) return;
-      const scrollTop = content.scrollTop;
-      const scrollHeight = content.scrollHeight - content.clientHeight;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const _progress = (scrollTop / scrollHeight) * 100;
       setProgress(_progress);
     };
 
-    content?.addEventListener("scroll", handleScroll);
-    return () => content?.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return progress;

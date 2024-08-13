@@ -19,7 +19,7 @@ export function Summary() {
             See all my projects
           </a>
         </div>
-        <ProjectList projects={projects} />
+        <ProjectList value={projects} />
       </div>
     </div>
   );

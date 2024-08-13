@@ -2,7 +2,7 @@ import type { Project } from "@constants/projects";
 import { Badge } from "@components/ui/badge";
 
 interface ProjectListProps {
-  projects: Project[];
+  value: Project[];
 }
 
 interface ProjectCardProps {
@@ -12,7 +12,7 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <a href={project.link} target="_blank" rel="noreferrer">
-      <div className="group/project flex w-full cursor-pointer flex-col-reverse gap-4 rounded p-4 drop-shadow backdrop-blur-lg hover:bg-accent md:flex-row md:gap-24 lg:gap-8">
+      <div className="group/project flex w-full cursor-pointer flex-col-reverse gap-4 rounded p-4 backdrop-blur-lg hover:bg-accent hover:drop-shadow md:flex-row md:gap-24 lg:gap-8">
         <div className="flex min-w-fit flex-col pt-2">
           <div className="box-border w-fit rounded border border-muted-foreground/30 group-hover/project:border-muted-foreground/50">
             <img src={project.image} className="w-40 rounded md:w-24" />
@@ -32,11 +32,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
   );
 }
 
-export function ProjectList({ projects }: ProjectListProps) {
+export function ProjectList({ value }: ProjectListProps) {
   return (
-    <div className="flex w-full flex-col">
-      {projects.map((p) => (
-        <ProjectCard key={p.name} project={p} />
+    <div className="flex w-full flex-col gap-4">
+      {value.map((v) => (
+        <ProjectCard key={v.name} project={v} />
       ))}
     </div>
   );

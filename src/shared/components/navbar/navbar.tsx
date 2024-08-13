@@ -16,9 +16,10 @@ type Props = Partial<ComponentProps<"div">>;
 
 export function Navbar({ className, ...props }: Props) {
   const theme = useStore(themeStore);
-  const progress = useScrollProgress("content");
+  const progress = useScrollProgress();
   const handleProjects = useScroll("projects");
   const handleExperience = useScroll("experience");
+
   return (
     <nav
       {...props}
