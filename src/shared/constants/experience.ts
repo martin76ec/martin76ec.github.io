@@ -40,3 +40,38 @@ export const experiences: Experience[] = [
     skills: ["HTML", "Javascript"],
   },
 ];
+
+export const esExperiences: Experience[] = [
+  {
+    start: "2021",
+    end: "2024",
+    role: "Desarrollador Fullstack Junior a Intermedio - Fifty Flowers",
+    description:
+      "Desarrollé, mantuve y diseñé componentes y sistemas clave para mejorar y apoyar las operaciones comerciales. Colaboré con otros departamentos para realizar investigaciones, obteniendo una profunda comprensión de los procesos empresariales y asegurando que las soluciones estuvieran alineadas con las necesidades y objetivos operativos.",
+    skills: ["Typescript", "Python", "React", "AWS Lambda", "MySQL", "Shopify", "PHP"],
+  },
+  {
+    start: "2020",
+    end: "2020",
+    role: "Cofundador - Conexperto",
+    description:
+      "Diseñé y construí un producto para manejar comunicaciones entre personas expertas en un tema y personas que necesitan su perspectiva sobre una circunstancia, utilizando design thinking para guiar el proceso de diseño.",
+    skills: ["Javascript", "React", "Mongo", "Figma"],
+  },
+  {
+    start: "2018",
+    end: "2019",
+    role: "Pasante de Operaciones - IBM",
+    description:
+      "Apoyé en tareas de operaciones, mantenimiento y administración del centro de datos, asegurando un rendimiento y confiabilidad óptimos.",
+    skills: ["Linux", "Oracle DB", "Excel"],
+  },
+  {
+    start: "2018",
+    end: "2018",
+    role: "Freelance - Agrobiotechnology",
+    description:
+      "Diseñé su página web siguiendo su identidad y ayudándolos a definir algunos conceptos clave para sus pautas de estilo de marca.",
+    skills: ["HTML", "Javascript"],
+  },
+];

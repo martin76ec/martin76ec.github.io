@@ -1,4 +1,5 @@
 import { Progress } from "@components/ui/progress";
+import { NAVBAR } from "@constants/defaults";
 import { useScroll } from "@hooks/use-scroll";
 import { useScrollProgress } from "@hooks/use-scroll-progress";
 import LogoDark from "@lib/assets/logo-dark.png";
@@ -6,6 +7,7 @@ import LogoWhite from "@lib/assets/logo-white.svg";
 import { cn } from "@lib/utils";
 import { useStore } from "@nanostores/react";
 import { type ComponentProps } from "react";
+import { langStore } from "src/shared/stores/lang-store";
 import { themeStore } from "src/shared/stores/theme-store";
 import { LangSwitch } from "./lang-switch";
 import { NavButton } from "./nav-btn";
@@ -16,6 +18,7 @@ type Props = Partial<ComponentProps<"div">>;
 
 export function Navbar({ className, ...props }: Props) {
   const theme = useStore(themeStore);
+  const lang = useStore(langStore);
   const progress = useScrollProgress();
   const handleProjects = useScroll("projects");
   const handleExperience = useScroll("experience");
@@ -42,12 +45,12 @@ export function Navbar({ className, ...props }: Props) {
             </NavButton>
             <div className="flex h-full items-center gap-4">
               <NavButton className="h-full" onClick={handleExperience}>
-                Experience
+                {NAVBAR.experience[lang]}
               </NavButton>
             </div>
             <div className="flex h-full items-center gap-4">
               <NavButton className="h-full" onClick={handleProjects}>
-                Projects
+                {NAVBAR.projects[lang]}
               </NavButton>
             </div>
           </div>

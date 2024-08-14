@@ -1,14 +1,13 @@
 import { Icon } from "@components/icon";
-import { useState } from "react";
-
-type Langs = "EN" | "ES";
+import { useStore } from "@nanostores/react";
+import { langStore } from "src/shared/stores/lang-store";
 
 export function LangSwitch() {
-  const [lang, setLang] = useState<Langs>("EN");
+  const lang = useStore(langStore);
 
   const handleClick = () => {
-    if (lang === "EN") return setLang("ES");
-    return setLang("EN");
+    if (lang === "en") return langStore.set("es");
+    return langStore.set("en");
   };
 
   return (
@@ -16,9 +15,9 @@ export function LangSwitch() {
       className="flex h-full w-32 select-none items-center justify-center gap-3 hover:bg-accent"
       onClick={handleClick}
     >
-      {lang === "EN" && <Icon name="us-flag" className="h-8 w-8 rounded-md" />}
-      {lang === "ES" && <Icon name="spain-flag" className="h-8 w-8 rounded-md" />}
-      <p className="text-sm text-foreground">{lang}</p>
+      {lang === "en" && <Icon name="us-flag" className="h-8 w-8 rounded-md" />}
+      {lang === "es" && <Icon name="spain-flag" className="h-8 w-8 rounded-md" />}
+      <p className="text-sm uppercase text-foreground">{lang}</p>
     </div>
   );
 }
