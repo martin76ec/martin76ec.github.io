@@ -25,10 +25,10 @@ export function AboutMe({ className }: Props) {
       </div>
       <div className="flex gap-4 fill-muted-foreground">
         <a href="https://www.linkedin.com/in/martinlarrea/" target="_blank" rel="noreferrer">
-          <Icon name="linkedin" className="h-8 w-8 hover:fill-foreground" />
+          <Icon name="linkedin" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
         </a>
         <a href="https://github.com/martin76ec" target="_blank" rel="noreferrer">
-          <Icon name="github" className="h-8 w-8 hover:fill-foreground" />
+          <Icon name="github" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
         </a>
       </div>
     </div>
