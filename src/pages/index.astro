@@ -21,12 +21,13 @@ import { GridBG } from "@components/content/grid-bg";
       )}
     >
       <div class="fixed hidden h-full max-w-fit lg:block">
-        <AboutMe className="h-2/3" />
+        <AboutMe client:idle className="h-2/3" />
       </div>
       <div class="hidden h-screen w-1/2 lg:block"></div>
       <div class="flex h-screen w-full flex-col gap-16 lg:w-1/2">
-        <AboutMe className="w-full lg:hidden" />
-        <Summary />
+        <AboutMe client:idle className="w-full lg:hidden" />
+        <Summary client:idle />
+        <div class="block h-1/2 w-full">&nbsp;</div>
         <div class="block h-1/2 w-full lg:hidden">&nbsp;</div>
       </div>
     </div>
