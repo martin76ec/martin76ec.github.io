@@ -10,5 +10,4 @@ const iconConf = {
 export default defineConfig({
   integrations: [tailwind(), icon(iconConf), react()],
   site: "https://martin76.github.io",
-  base: "martin76ec.github.io",
 });
