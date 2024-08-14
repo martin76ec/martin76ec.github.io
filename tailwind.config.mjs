@@ -91,5 +91,8 @@ export default {
       spacing: { ...brandSpacing },
     },
   },
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   plugins: [animate],
 };

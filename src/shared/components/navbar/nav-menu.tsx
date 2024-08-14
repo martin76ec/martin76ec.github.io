@@ -18,7 +18,7 @@ export function NavMenu() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
           <div className="flex h-full w-32 items-center justify-center hover:bg-accent" onClick={() => setOpen(true)}>
-            <Icon name="menu" className="h-4 w-4 fill-foreground" />
+            <Icon name="menu" className="h-6 w-6 fill-foreground" />
           </div>
         </DialogTrigger>
         <DialogContent>
