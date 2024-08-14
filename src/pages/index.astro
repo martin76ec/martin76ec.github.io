@@ -3,14 +3,18 @@ import Layout from "@layouts/index.astro";
 import { cn } from "@lib/utils";
 import { AboutMe } from "@components/content/about-me";
 import { Summary } from "@components/content/summary";
+import { GridBG } from "@components/content/grid-bg";
 ---
 
 <Layout>
+  <div class="fixed hidden h-screen w-full lg:block">
+    <GridBG client:idle />
+  </div>
   <div class="flex w-full justify-center py-8 lg:py-48">
     <div
       class={cn(
-        "lg:flex",
-        "gap-10 lg:gap-2 lg:justify-between",
+        "flex flex-col lg:flex-row",
+        "gap-10 lg:gap-2 justify-between",
         "text-foreground",
         "w-full max-w-screen-xl px-10",
         "max-h-screen"
