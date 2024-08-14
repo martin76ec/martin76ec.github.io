@@ -35,7 +35,7 @@ export function Navbar({ className, ...props }: Props) {
     >
       <Progress className="h-1 w-full rounded-none lg:hidden" value={progress} />
       <div className="flex h-full w-full justify-center">
-        <div className="bg-background/9 flex h-full w-full max-w-screen-xl items-center justify-between">
+        <div className="flex h-full w-full max-w-screen-xl items-center justify-between bg-background/70">
           <div className="flex h-full sm:hidden">
             <NavMenu />
           </div>
