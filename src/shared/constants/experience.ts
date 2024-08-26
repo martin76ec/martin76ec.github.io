@@ -10,10 +10,10 @@ export const experiences: Experience[] = [
   {
     start: "2021",
     end: "2024",
-    role: "Junior to Mid level Fullstack Developer - Fifty Flowers",
+    role: "Fullstack Developer - Fifty Flowers",
     description:
       "Developed, maintained, and designed key components and systems to enhance and support business operations. Collaborated with other departments to conduct research, gaining deep insights into business processes and ensuring that solutions were closely aligned with operational needs and goals.",
-    skills: ["Typescript", "Python", "React", "AWS Lambda", "MySQL", "Shopify", "PHP"],
+    skills: ["Typescript", "Python", "React", "AWS Lambda", "MySQL", "Shopify", "PHP", "Laravel"],
   },
   {
     start: "2020",
@@ -45,10 +45,10 @@ export const esExperiences: Experience[] = [
   {
     start: "2021",
     end: "2024",
-    role: "Desarrollador Fullstack Junior a Intermedio - Fifty Flowers",
+    role: "Desarrollador Fullstack - Fifty Flowers",
     description:
       "Desarrollé, mantuve y diseñé componentes y sistemas clave para mejorar y apoyar las operaciones comerciales. Colaboré con otros departamentos para realizar investigaciones, obteniendo una profunda comprensión de los procesos empresariales y asegurando que las soluciones estuvieran alineadas con las necesidades y objetivos operativos.",
-    skills: ["Typescript", "Python", "React", "AWS Lambda", "MySQL", "Shopify", "PHP"],
+    skills: ["Typescript", "Python", "React", "AWS Lambda", "MySQL", "Shopify", "PHP", "Laravel"],
   },
   {
     start: "2020",
