@@ -4,32 +4,27 @@ import { cn } from "@lib/utils";
 import { AboutMe } from "@components/content/about-me";
 import { Summary } from "@components/content/summary";
 import { GridBG } from "@components/content/grid-bg";
+import { Squares } from "@components/ui/squares-background";
+import { ScrollArea } from "@components/ui/scroll-area";
+import { NavMenu } from "@components/nav-menu/nav-menu";
 ---
 
 <Layout>
-  <div class="fixed hidden h-screen w-full lg:block">
-    <GridBG client:idle />
-  </div>
-  <div class="flex w-full justify-center py-8 lg:py-48">
+  <div class="flex w-full h-full justify-center">
     <div
       class={cn(
         "flex flex-col lg:flex-row",
-        "gap-10 lg:gap-2 justify-between",
+        "gap-24 lg:gap-4 justify-between",
         "text-foreground",
         "w-full max-w-screen-xl px-10",
-        "max-h-screen"
       )}
     >
-      <div class="fixed hidden h-full max-w-fit lg:block">
-        <AboutMe client:idle className="h-2/3" />
+      <div class="lg:w-1/2 flex flex-col gap-24">
+        <AboutMe client:idle />
       </div>
-      <div class="hidden h-screen w-1/2 lg:block"></div>
-      <div class="flex h-screen w-full flex-col gap-16 lg:w-1/2">
-        <AboutMe client:idle className="w-full lg:hidden" />
+      <ScrollArea client:idle className="lg:w-1/2 pr-4">
         <Summary client:idle />
-        <div class="block h-1/2 w-full">&nbsp;</div>
-        <div class="block h-1/2 w-full lg:hidden">&nbsp;</div>
-      </div>
+      </ScrollArea>
     </div>
   </div>
 </Layout>

@@ -1,6 +1,7 @@
 ---
 import LogoWhite from "@lib/assets/logo-white.svg";
 import { Navbar } from "@components/navbar";
+import { Squares } from "@components/ui/squares-background";
 import "@styles/global.css";
 ---
 
@@ -17,7 +18,16 @@ import "@styles/global.css";
     <title>Martín Larrea</title>
   </head>
   <body class="bg-background">
-    <Navbar client:only="react" />
-    <slot />
+    <div class="absolute z-0 w-full h-full">
+      <Squares
+        client:idle
+        direction="diagonal"
+        speed={0.5}
+        squareSize={40}
+      />
+    </div>
+    <div class="absolute z-0 w-full h-dvh py-16">
+      <slot />
+    </div>
   </body>
 </html>
