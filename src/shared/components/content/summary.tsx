@@ -5,14 +5,15 @@ import { useStore } from "@nanostores/react";
 import { langStore } from "src/shared/stores/lang-store";
 import { ExperienceList } from "./experience";
 import { ProjectList } from "./projects";
+import { BlogList } from "./blogs";
 
 export function Summary() {
   const lang = useStore(langStore);
 
   return (
     <div className="flex w-full flex-col gap-16">
-      <div className="flex w-full flex-col justify-start gap-4">
-        <h1 id="experience" className="mb-2 text-xl font-bold">
+      <div id="experience" className="flex w-full flex-col justify-start gap-4">
+        <h1 className="mb-2 text-xl font-bold">
           {SUMMARY.experience[lang]}
         </h1>
         <ExperienceList value={lang === "en" ? experiences : esExperiences} />
@@ -22,6 +23,12 @@ export function Summary() {
           <h1 className="text-xl font-bold">{SUMMARY.projects[lang]}</h1>
         </div>
         <ProjectList value={lang === "en" ? projects : esProjects} />
+      </div>
+      <div id="blog" className="flex w-full flex-col justify-start gap-4">
+        <div className="mb-2 flex items-center gap-4">
+          <h1 className="text-xl font-bold">{SUMMARY.blog[lang]}</h1>
+        </div>
+        <BlogList />
       </div>
     </div>
   );

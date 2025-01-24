@@ -22,7 +22,7 @@ export function AboutMe({ className }: Props) {
         </div>
         <NavMenu />
         <div>
-          <p className="mt-4 w-full text-lg text-muted-foreground lg:max-w-md">{authorDesc[lang]}</p>
+          <p className="w-full text-lg text-muted-foreground lg:max-w-md">{authorDesc[lang]}</p>
         </div>
       </div>
       <div className="flex gap-4 fill-muted-foreground">

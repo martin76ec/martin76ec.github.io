@@ -1,9 +1,8 @@
 import type { Experience } from "@constants/experience";
 import { Badge } from "@components/ui/badge";
-
 export function ExperienceCard({ exp }: { exp: Experience }) {
   return (
-    <div className="flex w-full flex-col gap-2 rounded hover:bg-accent md:flex-row md:gap-24 lg:gap-8 min-h-64 py-6 px-8 bg-accent/40 backdrop-blur-[2px]">
+    <div className="border-1 flex min-h-64 w-full flex-col gap-2 rounded border border-muted/80 bg-muted/50 px-8 py-6 hover:bg-accent backdrop-blur-[2px] md:flex-row md:gap-24 lg:gap-8 select-none">
       <div className="flex min-w-24 flex-col pt-2">
         <p className="text-md text-muted-foreground">
           {exp.start} - {exp.end}
