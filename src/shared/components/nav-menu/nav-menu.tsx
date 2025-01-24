@@ -1,5 +1,6 @@
+import { useScrollCoverage } from "@hooks/use-scroll-percentage";
 import { cn } from "@lib/utils";
-import { type ReactNode, useMemo, useState } from "react";
+import { type ReactNode, useEffect, useMemo, useState } from "react";
 
 interface Props {
   className?: string;
@@ -17,24 +18,28 @@ interface Opt {
   active?: boolean;
 }
 
-const defOpts: Opt[] = [
-  { label: "Experience", active: true },
-  { label: "Projects" },
-];
+const defOpts: Opt[] = [{ label: "experience", active: true }, { label: "projects" }, { label: "blog" }];
 
 function Item({ active = false, className = "", children, onClick }: ItemProps) {
   return (
     <div
       className={cn(
-        "flex h-8 w-full cursor-pointer rounded-md text-lg font-thin",
+        "flex h-8 w-full cursor-pointer rounded text-lg font-thin",
         className,
         active && "font-medium text-white"
       )}
       onClick={() => onClick()}
     >
       <div className="flex w-full items-center justify-start gap-2">
-        <div className={cn("h-[1px] w-1/4 bg-muted-foreground", active && "bg-white", "transition-all duration-1000 ease-in-out", active && "w-2/4")} />
-        <span className="w-3/4">{children}</span>
+        <div
+          className={cn(
+            "h-[4px] w-1/6 bg-muted-foreground",
+            active && "bg-white",
+            "rounded transition-all duration-300 ease-in-out",
+            active && "w-2/4"
+          )}
+        />
+        <span className="w-5/6">{children}</span>
       </div>
     </div>
   );
@@ -42,17 +47,35 @@ function Item({ active = false, className = "", children, onClick }: ItemProps) 
 
 export function NavMenu({ className }: Props) {
   const opts = useMemo(() => [...defOpts], []);
-  const [ selected, setSelected ] = useState(opts.find(opt => opt.active) ?? opts[0]);
+  const [selected, setSelected] = useState(opts.find((opt) => opt.active) ?? opts[0]);
+
+  const coverages = useScrollCoverage(
+    "scroll-content",
+    opts.map((opt) => opt.label)
+  );
+
+  useEffect(() => {
+    const covered = coverages?.toSorted((a, b) => a.coverage - b.coverage).pop();
+    const visible = opts.find((opt) => opt.label === covered?.id);
+
+    if (visible) {
+      setSelected(visible);
+    }
+  }, [coverages]);
 
   const handleClick = (opt: Opt) => {
     setSelected(opt);
+    document.getElementById(opt.label)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <div className={cn("flex w-64 flex-col gap-2", className)}>
-      {selected && opts.map((opt) => (
-        <Item key={opt.label} active={opt.label === selected.label} onClick={() => handleClick(opt)}>{opt.label}</Item>
-      ))}
+    <div className={cn("flex w-96 flex-col gap-2", className)}>
+      {selected &&
+        opts.map((opt) => (
+          <Item key={opt.label} active={opt.label === selected.label} onClick={() => handleClick(opt)}>
+            {opt.label}
+          </Item>
+        ))}
     </div>
   );
 }
