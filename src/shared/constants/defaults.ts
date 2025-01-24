@@ -28,4 +28,8 @@ export const SUMMARY = {
     en: "Projects",
     es: "Proyectos",
   },
+  blog: {
+    en: "Blog",
+    es: "Blog",
+  },
 };
