@@ -21,34 +21,12 @@ export const projects: Project[] = [
     skills: ["TypeScript", "Python", "AWS Amplify", "AWS Lambda", "Dynamo DB", "Docker"],
   },
   {
-    name: "svg-tsx-builder",
-    image: SvgBuilder.src,
-    description:
-      "A powerful npm package designed to convert a collection of SVG icons into individual TypeScript (TSX) components. It includes a versatile Icon component that allows developers to dynamically render any icon with ease. Ideal for projects requiring scalable and maintainable icon management.",
-    link: "https://github.com/martin76ec/svg-tsx-builder",
-    skills: ["TypeScript", "SVG", "Component-based Architecture"],
-  },
-  {
-    name: "Znotes",
-    image: Znotes.src,
-    description: "A react native application to write book notes.",
-    link: "https://github.com/martin76ec/znotes",
-    skills: ["React Native", "TypeScript"],
-  },
-  {
     name: "Musicfy",
     image: Musicfy.src,
     description:
       "A project collection designed to create a self-hosted music streaming platform, offering complete control and customization for your music experience.",
     link: "https://github.com/martin76ec/musicfy",
     skills: ["TypeScript", "Remix", "SSR", "Rust", "Postgres", "Supabase", "GoAuth", "Docker", "API REST", "API RPC"],
-  },
-  {
-    name: "Portfolio (v3)",
-    image: Portfolio.src,
-    description: "An Astro React website that aims to show my abilities creating reliable and usable systems",
-    link: "https://github.com/martin76ec/martin76ec.github.io",
-    skills: ["TypeScript", "Astro"],
   },
 ];
 

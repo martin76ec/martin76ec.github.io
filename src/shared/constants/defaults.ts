@@ -24,12 +24,24 @@ export const SUMMARY = {
     en: "Experience",
     es: "Experiencia",
   },
+  subExperience: {
+    en: "Recent",
+    es: "Reciente",
+  },
   projects: {
     en: "Projects",
     es: "Proyectos",
   },
+  subProjects: {
+    en: "Meaningful",
+    es: "Significativos",
+  },
   blog: {
     en: "Blog",
     es: "Blog",
+  },
+  subBlogs: {
+    en: "Latest Posts",
+    es: "Recientes",
   },
 };
