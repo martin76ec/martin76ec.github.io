@@ -87,6 +87,7 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         morph: "morph 30s infinite, rotate 40s infinite",
+        "animate-spin-once": "spin-once 0.5s ease-in-out 1"
       },
       spacing: { ...brandSpacing },
     },
