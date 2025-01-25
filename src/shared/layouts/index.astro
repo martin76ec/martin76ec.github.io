@@ -1,6 +1,7 @@
 ---
 import LogoWhite from "@lib/assets/logo-white.svg";
 import { Squares } from "@components/ui/squares-background";
+import { Toaster } from "@components/ui/sonner";
 import "@styles/global.css";
 ---
 
@@ -26,6 +27,7 @@ import "@styles/global.css";
       />
     </div>
     <div class="absolute z-0 w-full h-dvh py-16">
+      <Toaster client:only />
       <slot />
     </div>
   </body>
