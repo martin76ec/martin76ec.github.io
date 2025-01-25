@@ -16,8 +16,8 @@ export function Summary() {
       <div id="experience" className="flex w-full flex-col justify-start gap-4">
         <div className="flex items-center justify-between">
           <div className="flex gap-2 items-center">
-            <h1 className="mb-2 text-xl font-bold">{SUMMARY.experience[lang]}</h1>
-            <span className="text-lg text-muted-foreground">[{SUMMARY.subExperience[lang]}]</span>
+            <h1 className="text-xl font-bold">{SUMMARY.experience[lang]}</h1>
+            <span className="text-md text-muted-foreground">[{SUMMARY.subExperience[lang]}]</span>
           </div>
           <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
             <a href="/experience">browse all my experience</a>
@@ -30,7 +30,7 @@ export function Summary() {
         <div className="flex items-center justify-between">
           <div className="flex gap-2 items-center">
             <h1 className="text-xl font-bold">{SUMMARY.projects[lang]}</h1>
-            <span className="text-lg text-muted-foreground">[{SUMMARY.subProjects[lang]}]</span>
+            <span className="text-md text-muted-foreground">[{SUMMARY.subProjects[lang]}]</span>
           </div>
           <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
             <a href="/experience">browse all my projects</a>
@@ -41,9 +41,9 @@ export function Summary() {
       </div>
       <div id="blog" className="flex w-full flex-col justify-start gap-4">
         <div className="flex items-center justify-between">
-          <div className="flex gap-2 items-end">
+          <div className="flex gap-2 items-center">
             <h1 className="text-xl font-bold">{SUMMARY.blog[lang]}</h1>
-            <span className="text-lg text-muted-foreground">[{SUMMARY.subBlogs[lang]}]</span>
+            <span className="text-md text-muted-foreground">[{SUMMARY.subBlogs[lang]}]</span>
           </div>
           <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
             <a href="/experience">browse all my blogs</a>
