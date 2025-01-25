@@ -6,6 +6,7 @@ import { LogoWhite } from "./logo-white";
 import { Menu } from "./menu";
 import { SpainFlag } from "./spain-flag";
 import { USFlag } from "./us-flag";
+import { ExternalLink } from "./external-link";
 
 interface Props {
   name: IconName;
@@ -19,5 +20,6 @@ export function Icon({ name, className }: Props) {
   if (name === "logo-white") return <LogoWhite className={className} />;
   if (name === "spain-flag") return <SpainFlag className={className} />;
   if (name === "menu") return <Menu className={className} />;
+  if (name === "external-link") return <ExternalLink className={className} />;
   return <USFlag className={className} />;
 }

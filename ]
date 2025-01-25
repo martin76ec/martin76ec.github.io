@@ -24,22 +24,14 @@ export function Summary() {
         <ExperienceList value={lang === "en" ? experiences : esExperiences} />
       </div>
       <div id="projects" className="flex w-full flex-col justify-start gap-4">
-        <div className="flex items-center justify-between">
+        <div className="mb-2 flex items-center gap-4">
           <h1 className="text-xl font-bold">{SUMMARY.projects[lang]}</h1>
-          <span className="flex gap-2 items-center text-muted-foreground hover:text-foreground hover:underline">
-            <a href="/experience">browse all my projects</a>
-            <Icon name="external-link" className="h-4 w-4 fill-white" />
-          </span>
         </div>
         <ProjectList value={lang === "en" ? projects : esProjects} />
       </div>
       <div id="blog" className="flex w-full flex-col justify-start gap-4">
-        <div className="flex items-center justify-between">
+        <div className="mb-2 flex items-center gap-4">
           <h1 className="text-xl font-bold">{SUMMARY.blog[lang]}</h1>
-          <span className="flex gap-2 items-center text-muted-foreground hover:text-foreground hover:underline">
-            <a href="/experience">browse all my blogs</a>
-            <Icon name="external-link" className="h-4 w-4 fill-white" />
-          </span>
         </div>
         <BlogList />
       </div>
