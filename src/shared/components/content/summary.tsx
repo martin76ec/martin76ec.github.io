@@ -4,15 +4,20 @@ import { esExperiences, experiences } from "@constants/experience";
 import { esProjects, projects } from "@constants/projects";
 import { useStore } from "@nanostores/react";
 import { langStore } from "src/shared/stores/lang-store";
-import { BlogList } from "./blogs";
-import { ExperienceList } from "./experience";
+import { BlogList } from "./blogs"; import { ExperienceList } from "./experience";
 import { ProjectList } from "./projects";
+import { ArrowBigRightDash, ArrowRight, ArrowRightFromLine, ArrowRightIcon, ArrowRightSquare } from "lucide-react";
+import { cn } from "@lib/utils";
 
-export function Summary() {
+interface Props {
+  className?: string;
+}
+
+export function Summary({ className }: Props) {
   const lang = useStore(langStore);
 
   return (
-    <div className="flex w-full flex-col gap-16">
+    <div className={cn("flex w-full flex-col gap-16", className)}>
       <div id="experience" className="flex w-full flex-col justify-start gap-4">
         <div className="flex items-center justify-between">
           <div className="flex gap-2 items-center">
@@ -21,7 +26,7 @@ export function Summary() {
           </div>
           <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
             <a href="/experience">browse all my experience</a>
-            <Icon name="external-link" className="h-4 w-4 fill-white" />
+            <ArrowRight name="external-link" className="h-4 w-4" />
           </span>
         </div>
         <ExperienceList value={lang === "en" ? experiences : esExperiences} />
@@ -33,8 +38,8 @@ export function Summary() {
             <span className="text-md text-muted-foreground">[{SUMMARY.subProjects[lang]}]</span>
           </div>
           <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
-            <a href="/experience">browse all my projects</a>
-            <Icon name="external-link" className="h-4 w-4 fill-white" />
+            <a href="/projects">browse all my projects</a>
+            <ArrowRight name="external-link" className="h-4 w-4" />
           </span>
         </div>
         <ProjectList value={lang === "en" ? projects : esProjects} />
@@ -46,7 +51,7 @@ export function Summary() {
             <span className="text-md text-muted-foreground">[{SUMMARY.subBlogs[lang]}]</span>
           </div>
           <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
-            <a href="/experience">browse all my blogs</a>
+            <a href="https://medium.com/@martin.elarrea27" target="_blank" rel="noopener noreferrer">browse all my blogs</a>
             <Icon name="external-link" className="h-4 w-4 fill-white" />
           </span>
         </div>
