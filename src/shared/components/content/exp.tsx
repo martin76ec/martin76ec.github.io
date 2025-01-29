@@ -1,7 +1,5 @@
 import { Timeline } from "@components/ui/timeline";
-import { experiences } from "@constants/experience";
 import { detailedExperiences } from "@constants/experiences-detailed";
-import { ExperienceCard } from "./experience";
 import { ExperienceDetailedList } from "./experience-detailed-card";
 
 export function TimelineDemo() {
@@ -10,7 +8,7 @@ export function TimelineDemo() {
       title: "2024",
       content: (
         <div className="flex flex-col gap-4">
-          <ExperienceDetailedList exp={detailedExperiences.filter(e => e.year === 2024)} />
+          <ExperienceDetailedList exp={detailedExperiences.filter((e) => e.year === 2024)} />
         </div>
       ),
     },
@@ -18,7 +16,7 @@ export function TimelineDemo() {
       title: "2023",
       content: (
         <div className="flex flex-col gap-4">
-          <ExperienceDetailedList exp={detailedExperiences.filter(e => e.year === 2023)} />
+          <ExperienceDetailedList exp={detailedExperiences.filter((e) => e.year === 2023)} />
         </div>
       ),
     },
@@ -26,7 +24,7 @@ export function TimelineDemo() {
       title: "2022",
       content: (
         <div className="flex flex-col gap-4">
-          <ExperienceDetailedList exp={detailedExperiences.filter(e => e.year === 2022)} />
+          <ExperienceDetailedList exp={detailedExperiences.filter((e) => e.year === 2022)} />
         </div>
       ),
     },
@@ -34,7 +32,7 @@ export function TimelineDemo() {
       title: "2021",
       content: (
         <div className="flex flex-col gap-4">
-          <ExperienceDetailedList exp={detailedExperiences.filter(e => e.year === 2021)} />
+          <ExperienceDetailedList exp={detailedExperiences.filter((e) => e.year === 2021)} />
         </div>
       ),
     },
@@ -42,7 +40,7 @@ export function TimelineDemo() {
       title: "2020",
       content: (
         <div className="flex flex-col gap-4">
-          <ExperienceDetailedList exp={detailedExperiences.filter(e => e.year === 2020)} />
+          <ExperienceDetailedList exp={detailedExperiences.filter((e) => e.year === 2020)} />
         </div>
       ),
     },
