@@ -20,9 +20,11 @@ import { ScrollArea } from "@components/ui/scroll-area";
         <AboutMe client:only />
       </div>
 
-      <ScrollArea id="scroll-content" client:idle className="lg:w-1/2 pr-4">
+      <ScrollArea id="scroll-content" client:idle className="hidden lg:block lg:w-1/2 pr-4">
         <Summary client:idle />
       </ScrollArea>
+
+      <Summary client:idle className="flex lg:hidden" />
     </div>
   </div>
 </Layout>

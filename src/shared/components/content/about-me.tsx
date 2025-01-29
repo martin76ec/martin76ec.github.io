@@ -57,7 +57,9 @@ export function AboutMe({ className }: Props) {
           <p className="mt-2 text-2xl">{authorRole[lang]}</p>
           <p className="hidden font-mono text-sm text-muted-foreground lg:block">[Arch user btw]</p>
         </div>
-        <NavMenu />
+        <div className="hidden lg:block">
+          <NavMenu />
+        </div>
         <div>
           <p className="w-full text-lg text-muted-foreground lg:max-w-md">{authorDesc[lang]}</p>
         </div>
