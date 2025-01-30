@@ -2,9 +2,9 @@ import type { DetailedExperience } from "@constants/experiences-detailed";
 import { Badge } from "@components/ui/badge";
 import { Button } from "@components/ui/button";
 import { CollapsibleButton } from "@components/ui/collapsible-button";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronsLeft, ChevronsRight } from "lucide-react";
 import { useState } from "react";
-import { ChevronLeft, ChevronsLeftRightEllipsis, ChevronsRightLeft, ChevronsRightLeftIcon } from "lucide-react";
 
 interface Props {
   exp: DetailedExperience[];
@@ -39,28 +39,42 @@ function DetailedCard({ exp }: { exp: DetailedExperience }) {
           </CollapsibleButton>
         </div>
 
-        <motion.div className="flex flex-wrap items-center gap-2" initial="hidden" animate="show" exit="exit">
-          {!showAll &&
-            exp.technologies.slice(0, 5).map((s) => (
-              <Badge className="h-6" key={s}>
-                {s}
-              </Badge>
+        <motion.div className="flex flex-wrap items-center gap-2" transition={{ duration: 0.3, type: "spring" }}>
+          <AnimatePresence initial={false}>
+            {(showAll ? exp.technologies : exp.technologies.slice(0, 5)).map((s) => (
+              <motion.div
+                key={s}
+                layout
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Badge className="h-6" key={s}>
+                  {s}
+                </Badge>
+              </motion.div>
             ))}
-          {showAll &&
-            exp.technologies.map((s) => (
-              <Badge className="h-6" key={s}>
-                {s}
-              </Badge>
-            ))}
-          {exp.technologies.length > 5 && (
-            <Button className="rounded-full h-6 border border-2 border-muted-foreground" variant={"secondary"} onClick={handleShowMore}>
-               {showAll ? 
-                 <ChevronsRightLeftIcon className="w-4 h-4" />
-                 : 
-               <ChevronsLeftRightEllipsis className="w-4 h-4"/>
-               }
-            </Button>
-          )}
+            {exp.technologies.length > 5 && (
+              <motion.div layout>
+                <Button
+                  className="h-6 rounded-full border border-2 border-muted-foreground"
+                  variant={"outline"}
+                  onClick={handleShowMore}
+                >
+                  <motion.span
+                    key={showAll ? "show" : "hide"}
+                    initial={{ rotate: 0, opacity: 0 }}
+                    animate={{ rotate: 180, opacity: 1 }}
+                    exit={{ rotate: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {showAll ? <ChevronsRight className="h-4 w-4" /> : <ChevronsLeft className="h-4 w-4" />}
+                  </motion.span>
+                </Button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       </div>
     </div>
