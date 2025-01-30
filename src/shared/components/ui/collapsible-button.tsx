@@ -12,7 +12,7 @@ export function CollapsibleButton({ children, label }: Props) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-[350px] space-y-2">
+    <Collapsible open={isOpen} onOpenChange={setIsOpen} className=" space-y-2">
       <div className="flex items-center justify-between space-x-4 rounded border border-muted-foreground/50 px-4">
         <h4 className="text-sm font-semibold">{label}</h4>
         <CollapsibleTrigger asChild>
