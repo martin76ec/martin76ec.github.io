@@ -37,9 +37,9 @@ function Email() {
         className="h-6 w-6 border-muted/20 bg-accent"
       >
         {copiedText === "martin.elarrea27@gmail.com" ? (
-          <Check className="text-muted-background h-4 w-4 animate-spin-once" />
+          <Check className="text-muted-background animate-spin-once h-4 w-4" />
         ) : (
-          <Copy className="text-muted-background h-4 w-4 animate-spin-once" />
+          <Copy className="text-muted-background animate-spin-once h-4 w-4" />
         )}
       </Button>
     </div>

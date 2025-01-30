@@ -49,7 +49,7 @@ export function ExperienceFull() {
   return (
     <div className="w-full max-w-screen-xl px-10">
       <div className="flex flex-col gap-4">
-        <div className="flex gap-2 items-center text-md hover:underline text-muted-foreground hover:text-foreground">
+        <div className="text-md flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
           <ArrowLeft className="h-4 w-4" />
           <a href="/">
             <span>Go back</span>

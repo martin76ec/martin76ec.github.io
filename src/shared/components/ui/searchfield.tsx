@@ -1,31 +1,26 @@
-import { SearchIcon, XIcon } from "lucide-react"
-import {
-  Button as AriaButton,
+import type {
   ButtonProps as AriaButtonProps,
-  Group as AriaGroup,
   GroupProps as AriaGroupProps,
-  Input as AriaInput,
   InputProps as AriaInputProps,
-  SearchField as AriaSearchField,
   SearchFieldProps as AriaSearchFieldProps,
   ValidationResult as AriaValidationResult,
+} from "react-aria-components";
+import { cn } from "@lib/utils";
+import { SearchIcon, XIcon } from "lucide-react";
+import {
+  Button as AriaButton,
   composeRenderProps,
+  Group as AriaGroup,
+  Input as AriaInput,
+  SearchField as AriaSearchField,
   Text,
-} from "react-aria-components"
-
-import { cn } from "src/lib/utils"
-
-import { FieldError, FieldGroup, Label } from "src/components/ui/field"
+} from "react-aria-components";
+import { FieldError, FieldGroup, Label } from "src/components/ui/field";
 
 function SearchField({ className, ...props }: AriaSearchFieldProps) {
   return (
-    <AriaSearchField
-      className={composeRenderProps(className, (className) =>
-        cn("group", className)
-      )}
-      {...props}
-    />
-  )
+    <AriaSearchField className={composeRenderProps(className, (className) => cn("group", className))} {...props} />
+  );
 }
 
 function SearchFieldInput({ className, ...props }: AriaInputProps) {
@@ -39,7 +34,7 @@ function SearchFieldInput({ className, ...props }: AriaInputProps) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function SearchFieldGroup({ className, ...props }: AriaGroupProps) {
@@ -57,7 +52,7 @@ function SearchFieldGroup({ className, ...props }: AriaGroupProps) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function SearchFieldClear({ className, ...props }: AriaButtonProps) {
@@ -77,27 +72,19 @@ function SearchFieldClear({ className, ...props }: AriaButtonProps) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 interface JollySearchFieldProps extends AriaSearchFieldProps {
-  label?: string
-  description?: string
-  errorMessage?: string | ((validation: AriaValidationResult) => string)
+  label?: string;
+  description?: string;
+  errorMessage?: string | ((validation: AriaValidationResult) => string);
 }
 
-function JollySearchField({
-  label,
-  description,
-  className,
-  errorMessage,
-  ...props
-}: JollySearchFieldProps) {
+function JollySearchField({ label, description, className, errorMessage, ...props }: JollySearchFieldProps) {
   return (
     <SearchField
-      className={composeRenderProps(className, (className) =>
-        cn("group flex flex-col gap-2", className)
-      )}
+      className={composeRenderProps(className, (className) => cn("group flex flex-col gap-2", className))}
       {...props}
     >
       <Label>{label}</Label>
@@ -115,14 +102,8 @@ function JollySearchField({
       )}
       <FieldError>{errorMessage}</FieldError>
     </SearchField>
-  )
+  );
 }
 
-export {
-  SearchField,
-  SearchFieldGroup,
-  SearchFieldInput,
-  SearchFieldClear,
-  JollySearchField,
-}
-export type { JollySearchFieldProps }
+export { JollySearchField, SearchField, SearchFieldClear, SearchFieldGroup, SearchFieldInput };
+export type { JollySearchFieldProps };

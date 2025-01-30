@@ -1,4 +1,5 @@
 import type { IconName } from "./types";
+import { ExternalLink } from "./external-link";
 import { Github } from "./github";
 import { Instagram } from "./instagram";
 import { Linkedin } from "./linkedin";
@@ -6,7 +7,6 @@ import { LogoWhite } from "./logo-white";
 import { Menu } from "./menu";
 import { SpainFlag } from "./spain-flag";
 import { USFlag } from "./us-flag";
-import { ExternalLink } from "./external-link";
 
 interface Props {
   name: IconName;
