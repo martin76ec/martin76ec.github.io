@@ -55,7 +55,7 @@ export function TimelineDemo() {
 
 export function Experience() {
   return (
-    <div className="w-full max-w-screen-xl px-10 overflow-y-hidden">
+    <div className="w-full max-w-screen-xl overflow-y-hidden">
       <div className="flex p-2">
         <TimelineDemo />
       </div>
