@@ -23,10 +23,12 @@ export function Summary({ className }: Props) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold">{SUMMARY.experience[lang]}</h1>
-            <span className="text-md text-muted-foreground">[{SUMMARY.subExperience[lang]}]</span>
+            <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subExperience[lang]}]</span>
           </div>
           <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
-            <a href="/experience">browse all my experience</a>
+            <a className="flex gap-1" href="/experience">
+              browse all <span className="hidden md:block">my experience</span>
+            </a>
             <ArrowRight name="external-link" className="h-4 w-4" />
           </span>
         </div>
@@ -36,10 +38,12 @@ export function Summary({ className }: Props) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold">{SUMMARY.projects[lang]}</h1>
-            <span className="text-md text-muted-foreground">[{SUMMARY.subProjects[lang]}]</span>
+            <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subProjects[lang]}]</span>
           </div>
           <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
-            <a href="/projects">browse all my projects</a>
+            <a className="flex gap-1" href="/projects">
+              browse all <span className="hidden md:block">my projects</span>
+            </a>
             <ArrowRight name="external-link" className="h-4 w-4" />
           </span>
         </div>
@@ -49,11 +53,16 @@ export function Summary({ className }: Props) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold">{SUMMARY.blog[lang]}</h1>
-            <span className="text-md text-muted-foreground">[{SUMMARY.subBlogs[lang]}]</span>
+            <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subBlogs[lang]}]</span>
           </div>
           <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
-            <a href="https://medium.com/@martin.elarrea27" target="_blank" rel="noopener noreferrer">
-              browse all my blogs
+            <a
+              className="flex gap-1"
+              href="https://medium.com/@martin.elarrea27"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              browse all <span className="hidden md:block">my blogs</span>
             </a>
             <Icon name="external-link" className="h-4 w-4 fill-white" />
           </span>
