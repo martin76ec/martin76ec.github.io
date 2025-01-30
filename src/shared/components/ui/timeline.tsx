@@ -30,7 +30,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   return (
     <div className="w-full md:px-10" ref={containerRef}>
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-20 md:px-8 lg:px-10">
-        <div className="flex gap-2 items-center text-md hover:underline text-muted-foreground hover:text-foreground">
+        <div className="text-md flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
           <ArrowLeft className="h-4 w-4" />
           <a href="/">
             <span>Go back</span>
@@ -70,7 +70,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[2px] rounded-full bg-gradient-to-t from-black-500 from-[0%] via-gray-500 via-[10%] to-transparent"
+            className="from-black-500 absolute inset-x-0  top-0 w-[2px] rounded-full bg-gradient-to-t from-[0%] via-gray-500 via-[10%] to-transparent"
           />
         </div>
       </div>

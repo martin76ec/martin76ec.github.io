@@ -1,21 +1,21 @@
-import * as React from "react"
-import {
-  Input as AriaInput,
+import type {
   InputProps as AriaInputProps,
-  TextArea as AriaTextArea,
   TextAreaProps as AriaTextAreaProps,
-  TextField as AriaTextField,
   TextFieldProps as AriaTextFieldProps,
   ValidationResult as AriaValidationResult,
+} from "react-aria-components";
+import { cn } from "@lib/utils";
+import * as React from "react";
+import {
   composeRenderProps,
+  Input as AriaInput,
   Text,
-} from "react-aria-components"
+  TextArea as AriaTextArea,
+  TextField as AriaTextField,
+} from "react-aria-components";
+import { FieldError, Label } from "src/components/ui/field";
 
-import { cn } from "src/lib/utils"
-
-import { FieldError, Label } from "src/components/ui/field"
-
-const TextField = AriaTextField
+const TextField = AriaTextField;
 
 const Input = ({ className, ...props }: AriaInputProps) => {
   return (
@@ -34,8 +34,8 @@ const Input = ({ className, ...props }: AriaInputProps) => {
       )}
       {...props}
     />
-  )
-}
+  );
+};
 
 const TextArea = ({ className, ...props }: AriaTextAreaProps) => {
   return (
@@ -54,29 +54,20 @@ const TextArea = ({ className, ...props }: AriaTextAreaProps) => {
       )}
       {...props}
     />
-  )
-}
+  );
+};
 
 interface JollyTextFieldProps extends AriaTextFieldProps {
-  label?: string
-  description?: string
-  errorMessage?: string | ((validation: AriaValidationResult) => string)
-  textArea?: boolean
+  label?: string;
+  description?: string;
+  errorMessage?: string | ((validation: AriaValidationResult) => string);
+  textArea?: boolean;
 }
 
-function JollyTextField({
-  label,
-  description,
-  errorMessage,
-  textArea,
-  className,
-  ...props
-}: JollyTextFieldProps) {
+function JollyTextField({ label, description, errorMessage, textArea, className, ...props }: JollyTextFieldProps) {
   return (
     <TextField
-      className={composeRenderProps(className, (className) =>
-        cn("group flex flex-col gap-2", className)
-      )}
+      className={composeRenderProps(className, (className) => cn("group flex flex-col gap-2", className))}
       {...props}
     >
       <Label>{label}</Label>
@@ -88,8 +79,8 @@ function JollyTextField({
       )}
       <FieldError>{errorMessage}</FieldError>
     </TextField>
-  )
+  );
 }
 
-export { Input, TextField, JollyTextField, TextArea }
-export type { JollyTextFieldProps }
+export { Input, JollyTextField, TextArea, TextField };
+export type { JollyTextFieldProps };

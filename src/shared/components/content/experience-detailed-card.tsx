@@ -18,8 +18,13 @@ function DetailedCard({ exp }: { exp: DetailedExperience }) {
         <div className="text-muted-foreground">
           <CollapsibleButton label="Details">
             <div className="flex flex-col gap-2">
-              {exp.characteristics.map((e) => (
-                <div className="text-md rounded border border-muted-foreground/30 bg-background px-4 py-2">{e}</div>
+              {exp.characteristics.map((e, idx) => (
+                <div
+                  key={`${exp.activity}-${idx}`}
+                  className="text-md rounded border border-muted-foreground/30 bg-background px-4 py-2"
+                >
+                  {e}
+                </div>
               ))}
             </div>
           </CollapsibleButton>

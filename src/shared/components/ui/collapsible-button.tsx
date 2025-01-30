@@ -22,7 +22,7 @@ export function CollapsibleButton({ children, label }: Props) {
           </Button>
         </CollapsibleTrigger>
       </div>
-        <CollapsibleContent>{children}</CollapsibleContent>
+      <CollapsibleContent>{children}</CollapsibleContent>
     </Collapsible>
   );
 }

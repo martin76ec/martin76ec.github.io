@@ -36,14 +36,22 @@ export default [
   eslintConfigPrettier,
   { rules: { ...jsxRules } },
   {
-    files: ["**/components/ui/*.tsx"],
+    /** use this for shadcn based projects */
+    files: ["**/components/ui/*.tsx", "**/components/magicui/*.tsx"],
     rules: {
       "react/prop-types": [
         2,
         { ignore: ["className", "orientation", "decorative", "id", "value", "sideOffset", "checked"] },
       ],
-      "react-refresh/only-export-components": "off",
-      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/no-empty-object-type": "warn",
+      "@typescript-eslint/consistent-type-imports": "warn",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "import/no-unresolved": "warn",
+      "react/prop-types": "warn",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "unused-imports/no-unused-vars": "warn",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "consistent-return": "warn"
     },
   },
 ];
