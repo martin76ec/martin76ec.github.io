@@ -29,7 +29,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full md:px-10" ref={containerRef}>
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-20 md:px-8 lg:px-10">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 md:px-8 lg:px-10">
         <div className="text-md flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
           <ArrowLeft className="h-4 w-4" />
           <a href="/">
@@ -41,7 +41,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
         {data.map((item, index) => (
-          <div key={index} className="flex justify-start pt-10 md:gap-10 md:pt-40">
+          <div key={index} className="flex justify-start pt-10 md:gap-10">
             <div className="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:flex-row lg:max-w-sm">
               <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-black md:left-3">
                 <div className="h-4 w-4 rounded-full border border-neutral-300 bg-neutral-200 p-2 dark:border-neutral-700 dark:bg-neutral-800" />

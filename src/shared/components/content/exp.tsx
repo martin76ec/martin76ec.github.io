@@ -1,5 +1,6 @@
 import { Timeline } from "@components/ui/timeline";
 import { detailedExperiences } from "@constants/experiences-detailed";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { ExperienceDetailedList } from "./experience-detailed-card";
 
 export function TimelineDemo() {
@@ -46,17 +47,15 @@ export function TimelineDemo() {
     },
   ];
   return (
-    <div className="min-h-screen w-full">
-      <div className="absolute left-0 top-0 w-full">
-        <Timeline data={data} />
-      </div>
-    </div>
+    <ScrollArea className="h-svh w-full overflow-y-auto">
+      <Timeline data={data} />
+    </ScrollArea>
   );
 }
 
 export function Experience() {
   return (
-    <div className="w-full max-w-screen-xl px-10">
+    <div className="w-full max-w-screen-xl px-10 overflow-y-hidden">
       <div className="flex p-2">
         <TimelineDemo />
       </div>
