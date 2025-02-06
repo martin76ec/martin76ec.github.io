@@ -10,6 +10,12 @@ interface Props {
   exp: DetailedExperience[];
 }
 
+const item = {
+  hidden: { opacity: 0, y: -10, height: 0 },
+  visible: { opacity: 1, y: 0, height: "auto" },
+  exit: { opacity: 0, y: -10, height: 0, transition: { duration: 0.2 } },
+};
+
 function DetailedCard({ exp }: { exp: DetailedExperience }) {
   const [showAll, setShowAll] = useState(false);
 
@@ -26,16 +32,29 @@ function DetailedCard({ exp }: { exp: DetailedExperience }) {
         </div>
         <div className="text-muted-foreground">
           <CollapsibleButton label="Details">
-            <div className="flex flex-col gap-2">
+            <motion.ul
+              className="flex flex-col gap-2"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              layout
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+              }}
+            >
               {exp.characteristics.map((e, idx) => (
-                <div
+                <motion.li
                   key={`${exp.activity}-${idx}`}
-                  className="text-md rounded border border-muted-foreground/30 bg-background px-4 py-2"
+                  className="text-md rounded border border-muted-foreground/30 bg-background px-4 py-2 font-mono"
+                  variants={item}
+                  exit="exit"
+                  layout
                 >
                   {e}
-                </div>
+                </motion.li>
               ))}
-            </div>
+            </motion.ul>
           </CollapsibleButton>
         </div>
 
