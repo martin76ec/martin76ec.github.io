@@ -40,7 +40,7 @@ export function Summary({ className }: Props) {
             <h1 className="text-xl font-bold">{SUMMARY.projects[lang]}</h1>
             <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subProjects[lang]}]</span>
           </div>
-          <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
+          <span className="hidden flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
             <a className="flex gap-1" href="/projects">
               browse all <span className="hidden md:block">my projects</span>
             </a>
