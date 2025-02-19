@@ -64,13 +64,15 @@ export function AboutMe({ className }: Props) {
           <p className="w-full text-lg text-muted-foreground lg:max-w-md">{authorDesc[lang]}</p>
         </div>
       </div>
-      <div className="flex items-center gap-4 fill-muted-foreground">
-        <a href="https://www.linkedin.com/in/martinlarrea/" target="_blank" rel="noreferrer">
-          <Icon name="linkedin" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
-        </a>
-        <a href="https://github.com/martin76ec" target="_blank" rel="noreferrer">
-          <Icon name="github" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
-        </a>
+      <div className="flex sm:flex-row flex-col-reverse gap-8">
+        <div className="flex items-center gap-4 fill-muted-foreground">
+          <a href="https://www.linkedin.com/in/martinlarrea/" target="_blank" rel="noreferrer">
+            <Icon name="linkedin" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
+          </a>
+          <a href="https://github.com/martin76ec" target="_blank" rel="noreferrer">
+            <Icon name="github" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
+          </a>
+        </div>
         <Email />
       </div>
     </div>
