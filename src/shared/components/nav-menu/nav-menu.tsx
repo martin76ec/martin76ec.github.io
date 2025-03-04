@@ -73,7 +73,7 @@ export function NavMenu({ className }: Props) {
       {selected &&
         opts.map((opt) => (
           <Item key={opt.label} active={opt.label === selected.label} onClick={() => handleClick(opt)}>
-            {opt.label}
+            {opt.label.charAt(0).toUpperCase() + opt.label.substring(1)}
           </Item>
         ))}
     </div>
