@@ -15,7 +15,7 @@ import {
   SearchField as AriaSearchField,
   Text,
 } from "react-aria-components";
-import { FieldError, FieldGroup, Label } from "src/components/ui/field";
+import { FieldError, FieldGroup, Label } from "@components/ui/field";
 
 function SearchField({ className, ...props }: AriaSearchFieldProps) {
   return (

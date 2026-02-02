@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-export const BentoGrid = ({ children }) => {
+export const BentoGrid = ({ children }: { children: React.ReactNode }) => {
   const bentoStyles = [
     "col-span-1 row-span-1",
     "col-span-2 row-span-1",

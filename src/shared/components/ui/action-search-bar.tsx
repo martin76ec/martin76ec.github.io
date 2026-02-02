@@ -250,4 +250,4 @@ function ActionSearchBar({ actions = allActions }: { actions?: Action[] }) {
   );
 }
 
-export { Action, ActionSearchBar };
+export { ActionSearchBar };

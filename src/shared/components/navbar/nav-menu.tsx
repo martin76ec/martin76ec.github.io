@@ -2,16 +2,14 @@ import { Icon } from "@components/icon";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@components/ui/dialog";
 import { Separator } from "@components/ui/separator";
 import { NAVBAR } from "@constants/defaults";
-import { useScroll } from "@hooks/use-scroll";
 import { useStore } from "@nanostores/react";
 import { useState } from "react";
+import { Link } from "react-scroll";
 import { langStore } from "src/shared/stores/lang-store";
 
 export function NavMenu() {
   const lang = useStore(langStore);
   const [open, setOpen] = useState(false);
-  const handleProjects = useScroll("projects", () => setOpen(false));
-  const handleExperience = useScroll("experience", () => setOpen(false));
 
   return (
     <>
@@ -26,13 +24,25 @@ export function NavMenu() {
             <DialogTitle>{NAVBAR.content[lang]}</DialogTitle>
           </DialogHeader>
           <div className="flex w-full flex-col gap-2">
-            <a className="flex h-16 items-center rounded px-4 hover:bg-accent" onClick={handleExperience}>
+            <Link
+              to="experience"
+              smooth={true}
+              spy={true}
+              className="flex h-16 items-center rounded px-4 hover:bg-accent"
+              onClick={() => setOpen(false)}
+            >
               {NAVBAR.experience[lang]}
-            </a>
+            </Link>
             <Separator />
-            <a className="flex h-16 items-center rounded px-4 hover:bg-accent" onClick={handleProjects}>
+            <Link
+              to="projects"
+              smooth={true}
+              spy={true}
+              className="flex h-16 items-center rounded px-4 hover:bg-accent"
+              onClick={() => setOpen(false)}
+            >
               {NAVBAR.projects[lang]}
-            </a>
+            </Link>
           </div>
         </DialogContent>
       </Dialog>

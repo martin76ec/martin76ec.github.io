@@ -1,12 +1,13 @@
 import { Progress } from "@components/ui/progress";
 import { NAVBAR } from "@constants/defaults";
-import { useScroll } from "@hooks/use-scroll";
+import { useBreakPoint } from "@hooks/use-breakpoint";
 import { useScrollProgress } from "@hooks/use-scroll-progress";
 import LogoDark from "@lib/assets/logo-dark.png";
 import LogoWhite from "@lib/assets/logo-white.svg";
 import { cn } from "@lib/utils";
 import { useStore } from "@nanostores/react";
 import { type ComponentProps } from "react";
+import { Link } from "react-scroll";
 import { langStore } from "src/shared/stores/lang-store";
 import { themeStore } from "src/shared/stores/theme-store";
 import { LangSwitch } from "./lang-switch";
@@ -20,8 +21,10 @@ export function Navbar({ className, ...props }: Props) {
   const theme = useStore(themeStore);
   const lang = useStore(langStore);
   const progress = useScrollProgress();
-  const handleProjects = useScroll("projects");
-  const handleExperience = useScroll("experience");
+  const breakpoint = useBreakPoint();
+
+  const isDesktop = ["lg", "xl", "2xl"].includes(breakpoint);
+  const containerId = isDesktop ? "scroll-content" : undefined;
 
   return (
     <nav
@@ -44,14 +47,32 @@ export function Navbar({ className, ...props }: Props) {
               <img className="w-[2.5rem]" src={theme === "dark" ? LogoWhite.src : LogoDark.src} />
             </NavButton>
             <div className="flex h-full items-center gap-4">
-              <NavButton className="h-full" onClick={handleExperience}>
+              <Link
+                to="experience"
+                smooth={true}
+                spy={true}
+                containerId={containerId}
+                className={cn(
+                  "flex h-full min-w-32 select-none items-center justify-center text-foreground hover:bg-accent",
+                  "cursor-pointer"
+                )}
+              >
                 {NAVBAR.experience[lang]}
-              </NavButton>
+              </Link>
             </div>
             <div className="flex h-full items-center gap-4">
-              <NavButton className="h-full" onClick={handleProjects}>
+              <Link
+                to="projects"
+                smooth={true}
+                spy={true}
+                containerId={containerId}
+                className={cn(
+                  "flex h-full min-w-32 select-none items-center justify-center text-foreground hover:bg-accent",
+                  "cursor-pointer"
+                )}
+              >
                 {NAVBAR.projects[lang]}
-              </NavButton>
+              </Link>
             </div>
           </div>
           <div className="flex h-full gap-1">

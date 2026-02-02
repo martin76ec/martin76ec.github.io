@@ -13,7 +13,7 @@ import {
   TextArea as AriaTextArea,
   TextField as AriaTextField,
 } from "react-aria-components";
-import { FieldError, Label } from "src/components/ui/field";
+import { FieldError, Label } from "@components/ui/field";
 
 const TextField = AriaTextField;
 
