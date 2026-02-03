@@ -18,7 +18,7 @@ export function Summary({ className }: Props) {
   const lang = useStore(langStore);
 
   return (
-    <div className={cn("flex w-full flex-col gap-16", className)}>
+    <div className={cn("flex w-full flex-col gap-16 pb-[40vh]", className)}>
       <div id="blog" className="flex w-full flex-col justify-start gap-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">

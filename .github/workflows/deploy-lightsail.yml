@@ -1,0 +1,37 @@
+name: Deploy to Lightsail
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install Dependencies
+        run: bun install
+
+      - name: Build Project
+        run: bun run build
+
+      - name: Deploy to Server via Rsync
+        uses: easingthemes/ssh-deploy@v5.0.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.LIGHTSAIL_HOST }}
+          REMOTE_USER: ${{ secrets.LIGHTSAIL_USERNAME }}
+          # Syncs the local 'dist/' folder content to the 'dist/' folder inside your project path on the server.
+          # The '--delete' flag removes files on the server that are no longer in the build.
+          ARGS: "-avzr --delete"
+          SOURCE: "dist/"
+          TARGET: ${{ secrets.PROJECT_PATH }}/dist/
