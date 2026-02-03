@@ -1,5 +1,6 @@
 import mediumPosts from "@constants/medium-posts.json";
 import { Badge } from "@components/ui/badge";
+import { HIDDEN_BLOG_POSTS } from "@constants/defaults";
 
 interface BlogPost {
   title: string;
@@ -49,10 +50,20 @@ export function BlogCard({ post }: BlogCardProps) {
   );
 }
 
-export function BlogList() {
+interface BlogListProps {
+  limit?: number;
+}
+
+export function BlogList({ limit }: BlogListProps) {
+  const filteredPosts = mediumPosts.filter(
+    (post) => !HIDDEN_BLOG_POSTS.includes(post.title)
+  );
+
+  const displayedPosts = limit ? filteredPosts.slice(0, limit) : filteredPosts;
+
   return (
     <div className="flex w-full flex-col gap-4">
-      {mediumPosts.map((post) => (
+      {displayedPosts.map((post) => (
         <BlogCard key={post.link} post={post as BlogPost} />
       ))}
     </div>

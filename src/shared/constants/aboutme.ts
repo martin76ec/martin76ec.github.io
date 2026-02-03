@@ -1,6 +1,16 @@
 export const authorName = "Martin Larrea";
-export const authorRole = { en: "Software Engineer", es: "Ingeniero de Software" };
+export const authorRole = {
+  en: "Software Engineer & Entrepreneur",
+  es: "Ingeniero de Software y Emprendedor",
+};
 export const authorDesc = {
-  en: `I build software that works fast, scalable, and built to last. Whether it’s migrating business logic, tightening security, or designing infrastructure that can handle real world demands, I focus on making systems more reliable and efficient. From Python and TypeScript to cloud deployments and observability, I don’t just write code. I solve problems, clean up tech debt, and keep things running smoothly.`,
-  es: `Construyo software rápido, escalable y resistente. Ya sea migrando lógica de negocio, reforzando la seguridad o diseñando infraestructuras que soporten las demandas del mundo real, me enfoco en hacer los sistemas más confiables y eficientes. Desde Python y TypeScript hasta despliegues en la nube y observabilidad, no solo escribo código: resuelvo problemas, elimino deuda técnica y mantengo todo funcionando sin problemas.`,
+  en: `I'm a 28-year-old Engineer from Quito, Ecuador, who aims to build things that our society can benefit from.`,
+  es: `Soy un ingeniero de 28 años de Quito, Ecuador, que busca construir cosas de las que nuestra sociedad pueda beneficiarse.`,
+};
+
+export const socialLinks = {
+  linkedin: "https://www.linkedin.com/in/martinlarrea/",
+  github: "https://github.com/martin76ec",
+  spotify: "https://open.spotify.com/user/grantzero1",
+  productHunt: "https://www.producthunt.com/@martin76ec",
 };

@@ -15,7 +15,7 @@ interface Opt {
   label: string;
 }
 
-const defOpts: Opt[] = [{ label: "experience" }, { label: "projects" }, { label: "blog" }];
+const defOpts: Opt[] = [{ label: "blog" }, { label: "projects" }, { label: "experience" }];
 
 function Item({ children, to }: ItemProps) {
   return (

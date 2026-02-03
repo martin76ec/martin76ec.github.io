@@ -1,5 +1,5 @@
 import { Icon } from "@components/icon";
-import { SUMMARY } from "@constants/defaults";
+import { MAX_BLOG_POSTS_HOME, SUMMARY } from "@constants/defaults";
 import { esExperiences, experiences } from "@constants/experience";
 import { esProjects, projects } from "@constants/projects";
 import { cn } from "@lib/utils";
@@ -19,36 +19,6 @@ export function Summary({ className }: Props) {
 
   return (
     <div className={cn("flex w-full flex-col gap-16", className)}>
-      <div id="experience" className="flex w-full flex-col justify-start gap-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold">{SUMMARY.experience[lang]}</h1>
-            <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subExperience[lang]}]</span>
-          </div>
-          <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
-            <a className="flex gap-1" href="/experience">
-              browse all <span className="hidden md:block">my experience</span>
-            </a>
-            <ArrowRight name="external-link" className="h-4 w-4" />
-          </span>
-        </div>
-        <ExperienceList value={lang === "en" ? experiences : esExperiences} />
-      </div>
-      <div id="projects" className="flex w-full flex-col justify-start gap-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold">{SUMMARY.projects[lang]}</h1>
-            <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subProjects[lang]}]</span>
-          </div>
-          <span className="hidden flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
-            <a className="flex gap-1" href="/projects">
-              browse all <span className="hidden md:block">my projects</span>
-            </a>
-            <ArrowRight name="external-link" className="h-4 w-4" />
-          </span>
-        </div>
-        <ProjectList value={lang === "en" ? projects : esProjects} />
-      </div>
       <div id="blog" className="flex w-full flex-col justify-start gap-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -58,16 +28,44 @@ export function Summary({ className }: Props) {
           <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
             <a
               className="flex gap-1"
-              href="https://medium.com/@martin.elarrea27"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/blog"
             >
-              browse all <span className="hidden md:block">my blogs</span>
+              All my posts
             </a>
-            <Icon name="external-link" className="h-4 w-4 fill-white" />
+            <ArrowRight name="external-link" className="h-4 w-4" />
           </span>
         </div>
-        <BlogList />
+        <BlogList limit={MAX_BLOG_POSTS_HOME} />
+      </div>
+      <div id="projects" className="flex w-full flex-col justify-start gap-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <h1 className="text-xl font-bold">{SUMMARY.projects[lang]}</h1>
+            <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subProjects[lang]}]</span>
+          </div>
+          <span className="hidden flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
+            <a className="flex gap-1" href="/projects">
+              all my projects
+            </a>
+            <ArrowRight name="external-link" className="h-4 w-4" />
+          </span>
+        </div>
+        <ProjectList value={lang === "en" ? projects : esProjects} />
+      </div>
+      <div id="experience" className="flex w-full flex-col justify-start gap-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <h1 className="text-xl font-bold">{SUMMARY.experience[lang]}</h1>
+            <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subExperience[lang]}]</span>
+          </div>
+          <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
+            <a className="flex gap-1" href="/experience">
+              Browse details
+            </a>
+            <ArrowRight name="external-link" className="h-4 w-4" />
+          </span>
+        </div>
+        <ExperienceList value={lang === "en" ? experiences : esExperiences} />
       </div>
     </div>
   );

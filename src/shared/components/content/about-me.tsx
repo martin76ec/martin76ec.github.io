@@ -1,7 +1,7 @@
 import { Icon } from "@components/icon";
 import { NavMenu } from "@components/nav-menu/nav-menu";
 import { Button } from "@components/ui/button";
-import { authorDesc, authorName, authorRole } from "@constants/aboutme";
+import { authorDesc, authorName, authorRole, socialLinks } from "@constants/aboutme";
 import { cn } from "@lib/utils";
 import { useStore } from "@nanostores/react";
 import { Check, Copy } from "lucide-react";
@@ -60,17 +60,33 @@ export function AboutMe({ className }: Props) {
         <div className="hidden lg:block">
           <NavMenu />
         </div>
-        <div>
-          <p className="w-full text-lg text-muted-foreground lg:max-w-md">{authorDesc[lang]}</p>
+        <div className="relative group">
+          <div className="absolute -right-12 -top-12 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-5 lg:opacity-5">
+            <Icon name="logo-white" className="h-48 w-48 -rotate-12" />
+          </div>
+          <span className="mb-4 block font-mono text-xs font-semibold tracking-widest text-primary/50">
+            // ABOUT
+          </span>
+          <div className="border-l-2 border-primary/30 pl-6 py-1 transition-all duration-300 hover:border-primary/60">
+            <p className="w-full text-lg leading-relaxed text-muted-foreground lg:max-w-md">
+              {authorDesc[lang]}
+            </p>
+          </div>
         </div>
       </div>
       <div className="flex sm:flex-row flex-col-reverse gap-8">
         <div className="flex items-center gap-4 fill-muted-foreground">
-          <a href="https://www.linkedin.com/in/martinlarrea/" target="_blank" rel="noreferrer">
+          <a href={socialLinks.linkedin} target="_blank" rel="noreferrer">
             <Icon name="linkedin" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
           </a>
-          <a href="https://github.com/martin76ec" target="_blank" rel="noreferrer">
+          <a href={socialLinks.github} target="_blank" rel="noreferrer">
             <Icon name="github" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
+          </a>
+          <a href={socialLinks.spotify} target="_blank" rel="noreferrer">
+            <Icon name="spotify" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
+          </a>
+          <a href={socialLinks.productHunt} target="_blank" rel="noreferrer">
+            <Icon name="product-hunt" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
           </a>
         </div>
         <Email />

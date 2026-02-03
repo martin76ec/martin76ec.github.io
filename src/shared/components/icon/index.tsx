@@ -5,7 +5,9 @@ import { Instagram } from "./instagram";
 import { Linkedin } from "./linkedin";
 import { LogoWhite } from "./logo-white";
 import { Menu } from "./menu";
+import { ProductHunt } from "./product-hunt";
 import { SpainFlag } from "./spain-flag";
+import { Spotify } from "./spotify";
 import { USFlag } from "./us-flag";
 
 interface Props {
@@ -21,5 +23,7 @@ export function Icon({ name, className }: Props) {
   if (name === "spain-flag") return <SpainFlag className={className} />;
   if (name === "menu") return <Menu className={className} />;
   if (name === "external-link") return <ExternalLink className={className} />;
+  if (name === "spotify") return <Spotify className={className} />;
+  if (name === "product-hunt") return <ProductHunt className={className} />;
   return <USFlag className={className} />;
 }

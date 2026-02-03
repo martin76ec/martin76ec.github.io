@@ -45,3 +45,6 @@ export const SUMMARY = {
     es: "Recientes",
   },
 };
+
+export const HIDDEN_BLOG_POSTS = ["Test Blog"];
+export const MAX_BLOG_POSTS_HOME = 3;

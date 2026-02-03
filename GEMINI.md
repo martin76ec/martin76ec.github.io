@@ -35,10 +35,11 @@ This project is a personal portfolio website built with Astro and React. It show
     - `@constants/*` -> `src/shared/constants/*`
 
 ## Development Commands
-- `npm run dev`: Start local development server.
-- `npm run build`: Build for production.
-- `npm run preview`: Preview the production build locally.
-- `npm run lint`: Run ESLint.
+- **Package Manager**: This project **MUST** always use `bun` and `bunx`.
+- `bun run dev`: Start local development server.
+- `bun run build`: Build for production.
+- `bun run preview`: Preview the production build locally.
+- `bun run lint`: Run ESLint.
 
 ## Coding Conventions
 - **Styling**: Utility-first with Tailwind CSS. `clsx` and `tailwind-merge` are used for class manipulation.
