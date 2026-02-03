@@ -30,8 +30,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
           REMOTE_HOST: ${{ secrets.LIGHTSAIL_HOST }}
           REMOTE_USER: ${{ secrets.LIGHTSAIL_USERNAME }}
-          # Syncs the local 'dist/' folder content to the 'dist/' folder inside your project path on the server.
-          # The '--delete' flag removes files on the server that are no longer in the build.
           ARGS: "-avzr --delete"
           SOURCE: "dist/"
           TARGET: ${{ secrets.PROJECT_PATH }}/dist/

@@ -74,7 +74,7 @@ export function AboutMe({ className }: Props) {
           </div>
         </div>
       </div>
-      <div className="flex sm:flex-row flex-col-reverse gap-8">
+      <div className="flex flex-col-reverse gap-8">
         <div className="flex items-center gap-4 fill-muted-foreground">
           <a href={socialLinks.linkedin} target="_blank" rel="noreferrer">
             <Icon name="linkedin" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
