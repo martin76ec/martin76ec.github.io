@@ -37,8 +37,8 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.LIGHTSAIL_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.LIGHTSAIL_USERNAME }}
+          username: ${{ secrets.LIGHTSAIL_USERNAME }}
+          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
           port: 443
           script: |
             sudo mkdir -p /var/www/portfolio
