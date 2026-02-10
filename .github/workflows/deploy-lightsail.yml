@@ -39,7 +39,7 @@ jobs:
           host: ${{ secrets.LIGHTSAIL_HOST }}
           username: ${{ secrets.LIGHTSAIL_USERNAME }}
           key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
-          port: 443
+          port: 22
           script: |
             sudo mkdir -p /var/www/portfolio
             sudo cp -r ${{ secrets.PROJECT_PATH }}/. /var/www/portfolio/
