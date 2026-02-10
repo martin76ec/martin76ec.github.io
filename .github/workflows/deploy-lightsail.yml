@@ -32,4 +32,14 @@ jobs:
           REMOTE_USER: ${{ secrets.LIGHTSAIL_USERNAME }}
           ARGS: "-avzr --delete"
           SOURCE: "dist/"
-          TARGET: ${{ secrets.PROJECT_PATH }}/dist/
+          TARGET: ${{ secrets.PROJECT_PATH }}
+      - name: Move to Final Destination
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.LIGHTSAIL_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.LIGHTSAIL_USERNAME }}
+          port: 443
+          script: |
+            sudo mkdir -p /var/www/portfolio
+            sudo cp -r ${{ secrets.PROJECT_PATH }}/. /var/www/portfolio/
