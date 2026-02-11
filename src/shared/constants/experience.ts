@@ -37,8 +37,6 @@ export const experiences: Experience[] = [
       "Node.js",
       "AWS",
       "Docker",
-      "PHP",
-      "Laravel",
     ],
   },
 ];
@@ -74,8 +72,6 @@ export const esExperiences: Experience[] = [
       "Node.js",
       "AWS",
       "Docker",
-      "PHP",
-      "Laravel",
     ],
   },
 ];

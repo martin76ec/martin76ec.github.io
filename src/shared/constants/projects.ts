@@ -17,8 +17,16 @@ export const projects: Project[] = [
     name: "Acodear",
     image: Acodear.src,
     description: "Platform to learn to code, with video instructions, hints and a built-in code editor.",
-    link: "https://dev.acodear.io",
-    skills: ["TypeScript", "Python", "AWS Amplify", "AWS Lambda", "Dynamo DB", "Docker"],
+    link: "https://www.acodear.com",
+    skills: ["TypeScript", "Python", "Docker", "AWS"],
+  },
+  {
+    name: "svg-tsx-builder",
+    image: SvgBuilder.src,
+    description:
+      "A library to manage your icons without overhead. It transforms your SVGs into individual React components with an easy-to-use selector.",
+    link: "https://github.com/martin76ec/svg-tsx-builder",
+    skills: ["TypeScript"],
   },
   {
     name: "Musicfy",
@@ -26,7 +34,7 @@ export const projects: Project[] = [
     description:
       "A project collection designed to create a self-hosted music streaming platform, offering complete control and customization for your music experience.",
     link: "https://github.com/martin76ec/musicfy",
-    skills: ["TypeScript", "Remix", "SSR", "Rust", "Postgres", "Supabase", "GoAuth", "Docker", "API REST", "API RPC"],
+    skills: ["TypeScript", "Remix", "Postgres", "Docker", "API UX"],
   },
 ];
 
