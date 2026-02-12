@@ -24,14 +24,11 @@ export function Summary({ className }: Props) {
             <h1 className="text-xl font-bold">{SUMMARY.blog[lang]}</h1>
             <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subBlogs[lang]}]</span>
           </div>
-          <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
-            <a
-              className="flex gap-1"
-              href="/blog"
-            >
+          <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
+            <a className="flex gap-1" href="/blog">
               All my posts
             </a>
-            <ArrowRight name="external-link" className="h-4 w-4" />
+            <ArrowRight name="external-link" className="h-3.5 w-3.5 md:h-4 md:w-4" />
           </span>
         </div>
         <BlogList limit={MAX_BLOG_POSTS_HOME} />
@@ -42,11 +39,11 @@ export function Summary({ className }: Props) {
             <h1 className="text-xl font-bold">{SUMMARY.projects[lang]}</h1>
             <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subProjects[lang]}]</span>
           </div>
-          <span className="hidden flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
+          <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
             <a className="flex gap-1" href="/projects">
               all my projects
             </a>
-            <ArrowRight name="external-link" className="h-4 w-4" />
+            <ArrowRight name="external-link" className="h-3.5 w-3.5 md:h-4 md:w-4" />
           </span>
         </div>
         <ProjectList value={lang === "en" ? projects : esProjects} />
@@ -57,11 +54,11 @@ export function Summary({ className }: Props) {
             <h1 className="text-xl font-bold">{SUMMARY.experience[lang]}</h1>
             <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subExperience[lang]}]</span>
           </div>
-          <span className="flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
+          <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
             <a className="flex gap-1" href="/experience">
               Browse details
             </a>
-            <ArrowRight name="external-link" className="h-4 w-4" />
+            <ArrowRight name="external-link" className="h-3.5 w-3.5 md:h-4 md:w-4" />
           </span>
         </div>
         <ExperienceList value={lang === "en" ? experiences : esExperiences} />

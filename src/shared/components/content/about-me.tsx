@@ -91,7 +91,7 @@ export function AboutMe({ className }: Props) {
           </a> */}
         </div>
         <div className="flex flex-col gap-2">
-          <CopyField value={socialLinks.linkedin} label="LinkedIn" />
+          <CopyField value={socialLinks.linkedin.replace("https://www.", "")} label="LinkedIn" />
         </div>
       </div>
     </div>
