@@ -13,13 +13,13 @@ interface Props {
   className?: string;
 }
 
-function Email() {
+function CopyField({ value, label }: { value: string; label: string }) {
   const [copiedText, setCopiedText] = useState("");
 
   const handleCopy = async (text: string) => {
     navigator.clipboard.writeText(text).then(() => {
       setCopiedText(text);
-      toast.success("Email copied to the clipboard :D");
+      toast.success(`${label} copied to the clipboard :D`);
 
       setTimeout(() => {
         setCopiedText("");
@@ -28,15 +28,15 @@ function Email() {
   };
 
   return (
-    <div className="bg-muted-accent/50 flex max-w-96 items-center justify-between gap-2 rounded-lg border border-accent p-2 text-muted-foreground backdrop-blur-2xl">
-      <code className="rounded p-1 text-xs">martin.elarrea27@gmail.com</code>
+    <div className="bg-muted-accent/50 flex max-w-full items-center justify-between gap-2 rounded-lg border border-accent p-2 text-muted-foreground backdrop-blur-2xl lg:max-w-96">
+      <code className="truncate rounded p-1 text-xs">{value}</code>
       <Button
         variant="outline"
         size="icon"
-        onClick={() => handleCopy("martin.elarrea27@gmail.com")}
-        className="h-6 w-6 border-muted/20 bg-accent"
+        onClick={() => handleCopy(value)}
+        className="h-6 w-6 shrink-0 border-muted/20 bg-accent"
       >
-        {copiedText === "martin.elarrea27@gmail.com" ? (
+        {copiedText === value ? (
           <Check className="text-muted-background animate-spin-once h-4 w-4" />
         ) : (
           <Copy className="text-muted-background animate-spin-once h-4 w-4" />
@@ -76,20 +76,23 @@ export function AboutMe({ className }: Props) {
       </div>
       <div className="flex flex-col-reverse gap-8">
         <div className="flex items-center gap-4 fill-muted-foreground">
-          <a href={socialLinks.linkedin} target="_blank" rel="noreferrer">
-            <Icon name="linkedin" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
-          </a>
           <a href={socialLinks.github} target="_blank" rel="noreferrer">
             <Icon name="github" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
           </a>
-          <a href={socialLinks.spotify} target="_blank" rel="noreferrer">
+          <a href={socialLinks.linkedin} target="_blank" rel="noreferrer">
+            <Icon name="linkedin" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
+          </a>
+          {/* Spotify and Product Hunt hidden for now */}
+          {/* <a href={socialLinks.spotify} target="_blank" rel="noreferrer">
             <Icon name="spotify" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
           </a>
           <a href={socialLinks.productHunt} target="_blank" rel="noreferrer">
             <Icon name="product-hunt" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
-          </a>
+          </a> */}
         </div>
-        <Email />
+        <div className="flex flex-col gap-2">
+          <CopyField value={socialLinks.linkedin} label="LinkedIn" />
+        </div>
       </div>
     </div>
   );

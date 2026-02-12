@@ -13,4 +13,5 @@ export const socialLinks = {
   github: "https://github.com/martin76ec",
   spotify: "https://open.spotify.com/user/grantzero1",
   productHunt: "https://www.producthunt.com/@martin76ec",
+  email: "martin.elarrea27@gmail.com",
 };
