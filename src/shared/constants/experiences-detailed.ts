@@ -11,6 +11,22 @@ export interface DetailedExperience {
 export const detailedExperiences: DetailedExperience[] = [
   {
     year: 2024,
+    company: "Thoughtworks",
+    role: "Infrastructure Consultant",
+    activity: "Infrastructure & AI Agents",
+    description:
+      "Developed monitoring solutions and AI-driven automation for Kubernetes environments.",
+    characteristics: [
+      "Developed monitoring dashboards in Dynatrace for system observability.",
+      "Responded to Level 2 incidents for Kubernetes clusters.",
+      "Developed AI agents for DevOps and Kubernetes automation.",
+      "Built an AI Agent evaluator to ensure quality and reliability.",
+      "Facilitated English practice conversations for the team.",
+    ],
+    technologies: ["AWS", "Kubernetes", "Terraform", "Python", "Dynatrace"],
+  },
+  {
+    year: 2024,
     company: "FiftyFlowers",
     role: "Full-Stack Developer",
     activity: "Bloom Brain - Building Phase",

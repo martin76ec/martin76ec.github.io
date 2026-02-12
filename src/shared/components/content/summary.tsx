@@ -1,4 +1,3 @@
-import { Icon } from "@components/icon";
 import { MAX_BLOG_POSTS_HOME, SUMMARY } from "@constants/defaults";
 import { esExperiences, experiences } from "@constants/experience";
 import { esProjects, projects } from "@constants/projects";
