@@ -19,7 +19,7 @@ export function Summary({ className }: Props) {
   return (
     <div className={cn("flex w-full flex-col gap-16 pb-[40vh]", className)}>
       <div id="blog" className="flex w-full flex-col justify-start gap-4">
-        <div className="flex items-center justify-between">
+        <div className="sticky top-0 z-20 flex items-center justify-between bg-background/95 py-4 backdrop-blur-sm">
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold">{SUMMARY.blog[lang]}</h1>
             <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subBlogs[lang]}]</span>
@@ -37,7 +37,7 @@ export function Summary({ className }: Props) {
         <BlogList limit={MAX_BLOG_POSTS_HOME} />
       </div>
       <div id="projects" className="flex w-full flex-col justify-start gap-4">
-        <div className="flex items-center justify-between">
+        <div className="sticky top-0 z-20 flex items-center justify-between bg-background/95 py-4 backdrop-blur-sm">
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold">{SUMMARY.projects[lang]}</h1>
             <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subProjects[lang]}]</span>
@@ -52,7 +52,7 @@ export function Summary({ className }: Props) {
         <ProjectList value={lang === "en" ? projects : esProjects} />
       </div>
       <div id="experience" className="flex w-full flex-col justify-start gap-4">
-        <div className="flex items-center justify-between">
+        <div className="sticky top-0 z-20 flex items-center justify-between bg-background/95 py-4 backdrop-blur-sm">
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold">{SUMMARY.experience[lang]}</h1>
             <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subExperience[lang]}]</span>
