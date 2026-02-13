@@ -25,9 +25,27 @@ function DetailedCard({ exp }: { exp: DetailedExperience }) {
 
   return (
     <div className="border-1 flex min-h-64 w-full select-none flex-col gap-2 rounded border border-muted/80 bg-muted/50 px-8 py-6 backdrop-blur-md hover:bg-accent md:flex-row md:gap-24 lg:gap-8">
+      <div className="flex min-w-24 flex-col">
+        {exp.logo && (
+          <img
+            src={exp.logo}
+            alt={exp.company}
+            className="hidden h-12 w-12 rounded-md bg-white object-contain md:block"
+          />
+        )}
+      </div>
       <div className="flex flex-col justify-between gap-12">
         <div className="flex flex-col gap-2">
-          <p className="text-lg text-foreground">{exp.activity}</p>
+          <div className="flex items-center gap-4">
+            {exp.logo && (
+              <img
+                src={exp.logo}
+                alt={exp.company}
+                className="h-10 w-10 rounded-md bg-white object-contain md:hidden"
+              />
+            )}
+            <p className="text-lg text-foreground">{exp.activity}</p>
+          </div>
           <p className="text-md text-muted-foreground">{exp.description}</p>
         </div>
         <div className="text-muted-foreground">

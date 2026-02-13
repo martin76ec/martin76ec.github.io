@@ -1,3 +1,6 @@
+import TW from "@lib/assets/tw.png";
+import Fifty from "@lib/assets/fifty.png";
+
 export interface DetailedExperience {
   year: number;
   company: string;
@@ -6,6 +9,7 @@ export interface DetailedExperience {
   description: string;
   characteristics: string[];
   technologies: string[];
+  logo?: string;
 }
 
 export const detailedExperiences: DetailedExperience[] = [
@@ -24,6 +28,7 @@ export const detailedExperiences: DetailedExperience[] = [
       "Facilitated English practice conversations for the team.",
     ],
     technologies: ["AWS", "Kubernetes", "Terraform", "Python", "Dynatrace"],
+    logo: TW.src,
   },
   {
     year: 2024,
@@ -50,6 +55,7 @@ export const detailedExperiences: DetailedExperience[] = [
       "Docker",
       "Grafana",
     ],
+    logo: Fifty.src,
   },
   {
     year: 2023,
@@ -71,6 +77,7 @@ export const detailedExperiences: DetailedExperience[] = [
       "TypeScript",
       "DDD",
     ],
+    logo: Fifty.src,
   },
   {
     year: 2023,
@@ -84,6 +91,7 @@ export const detailedExperiences: DetailedExperience[] = [
       "Defined product scope for seamless integration with minimal dependencies.",
     ],
     technologies: ["Figma", "Miro"],
+    logo: Fifty.src,
   },
   {
     year: 2022,
@@ -98,6 +106,7 @@ export const detailedExperiences: DetailedExperience[] = [
       "Integrated payment processing APIs.",
     ],
     technologies: ["AWS Lambda", "Node.js", "React", "TypeScript"],
+    logo: Fifty.src,
   },
   {
     year: 2021,
@@ -118,6 +127,7 @@ export const detailedExperiences: DetailedExperience[] = [
       "Shopify APIs",
       "Python",
     ],
+    logo: Fifty.src,
   },
   {
     year: 2021,
@@ -131,5 +141,6 @@ export const detailedExperiences: DetailedExperience[] = [
       "Fixed critical bugs and added new features for order management.",
     ],
     technologies: ["PHP", "Laravel", "MySQL"],
+    logo: Fifty.src,
   },
 ];

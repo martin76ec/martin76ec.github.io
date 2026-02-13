@@ -1,9 +1,14 @@
+import TW from "@lib/assets/tw.png";
+import Certificada from "@lib/assets/certificada.png";
+import Fifty from "@lib/assets/fifty.png";
+
 export interface Experience {
   start: string;
   end: string;
   role: string;
   description: string;
   skills: string[];
+  logo?: string;
 }
 
 export const experiences: Experience[] = [
@@ -14,6 +19,7 @@ export const experiences: Experience[] = [
     description:
       "Developed monitoring dashboards in Dynatrace and managed Level 2 incidents for Kubernetes. Built AI agents for DevOps and Kubernetes, along with an AI Agent evaluator. Facilitated English practice conversations.",
     skills: ["AWS", "Kubernetes", "Terraform", "Python", "Dynatrace"],
+    logo: TW.src,
   },
   {
     start: "2024",
@@ -31,6 +37,7 @@ export const experiences: Experience[] = [
       "Grafana",
       "MySQL",
     ],
+    logo: Certificada.src,
   },
   {
     start: "2020",
@@ -39,6 +46,7 @@ export const experiences: Experience[] = [
     description:
       "Built scalable web applications using React, Remix, and Node.js. Developed serverless solutions on AWS Lambda and managed Dockerized services on EC2. Integrated machine learning scripts and maintained legacy PHP systems.",
     skills: ["Python", "TypeScript", "React", "Node.js", "AWS", "Docker"],
+    logo: Fifty.src,
   },
 ];
 
@@ -50,6 +58,7 @@ export const esExperiences: Experience[] = [
     description:
       "Desarrollé tableros de monitoreo en Dynatrace y gestioné incidentes de Nivel 2 en Kubernetes. Creé agentes de IA para DevOps y Kubernetes, junto con un evaluador de agentes de IA. Facilité conversaciones de práctica en inglés.",
     skills: ["AWS", "Kubernetes", "Terraform", "Python", "Dynatrace"],
+    logo: TW.src,
   },
   {
     start: "2024",
@@ -67,6 +76,7 @@ export const esExperiences: Experience[] = [
       "Grafana",
       "MySQL",
     ],
+    logo: Certificada.src,
   },
   {
     start: "2020",
@@ -75,5 +85,6 @@ export const esExperiences: Experience[] = [
     description:
       "Construí aplicaciones web escalables usando React, Remix y Node.js. Desarrollé soluciones serverless en AWS Lambda y gestioné servicios Dockerizados en EC2. Integré scripts de machine learning y mantuve sistemas PHP legacy.",
     skills: ["Python", "TypeScript", "React", "Node.js", "AWS", "Docker"],
+    logo: Fifty.src,
   },
 ];
