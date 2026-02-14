@@ -45,6 +45,14 @@ export function TimelineDemo() {
         </div>
       ),
     },
+    {
+      title: "2019",
+      content: (
+        <div className="flex flex-col gap-4">
+          <ExperienceDetailedList exp={detailedExperiences.filter((e) => e.year === 2019)} />
+        </div>
+      ),
+    },
   ];
   return (
     <ScrollArea className="h-svh w-full overflow-y-auto">

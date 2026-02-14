@@ -1,6 +1,7 @@
 import TW from "@lib/assets/tw.png";
 import Certificada from "@lib/assets/certificada.png";
 import Fifty from "@lib/assets/fifty.png";
+import IBM from "@lib/assets/ibm.png";
 
 export interface Experience {
   start: string;
@@ -48,6 +49,15 @@ export const experiences: Experience[] = [
     skills: ["Python", "TypeScript", "React", "Node.js", "AWS", "Docker"],
     logo: Fifty.src,
   },
+  {
+    start: "2019",
+    end: "2019",
+    role: "Infrastructure Intern - IBM",
+    description:
+      "Supported operations, maintenance, and management of the data center, ensuring optimal performance and reliability.",
+    skills: ["Data Center", "Infrastructure", "Linux"],
+    logo: IBM.src,
+  },
 ];
 
 export const esExperiences: Experience[] = [
@@ -86,5 +96,14 @@ export const esExperiences: Experience[] = [
       "Construí aplicaciones web escalables usando React, Remix y Node.js. Desarrollé soluciones serverless en AWS Lambda y gestioné servicios Dockerizados en EC2. Integré scripts de machine learning y mantuve sistemas PHP legacy.",
     skills: ["Python", "TypeScript", "React", "Node.js", "AWS", "Docker"],
     logo: Fifty.src,
+  },
+  {
+    start: "2019",
+    end: "2019",
+    role: "Pasante de Infraestructura - IBM",
+    description:
+      "Apoyé operaciones, mantenimiento y gestión del centro de datos, asegurando un rendimiento y confiabilidad óptimos.",
+    skills: ["Data Center", "Infrastructure", "Linux"],
+    logo: IBM.src,
   },
 ];

@@ -1,5 +1,6 @@
 import TW from "@lib/assets/tw.png";
 import Fifty from "@lib/assets/fifty.png";
+import IBM from "@lib/assets/ibm.png";
 
 export interface DetailedExperience {
   year: number;
@@ -142,5 +143,19 @@ export const detailedExperiences: DetailedExperience[] = [
     ],
     technologies: ["PHP", "Laravel", "MySQL"],
     logo: Fifty.src,
+  },
+  {
+    year: 2019,
+    company: "IBM",
+    role: "Infrastructure Intern",
+    activity: "Data Center Support",
+    description:
+      "Supported operations, maintenance, and management of the data center, ensuring optimal performance and reliability.",
+    characteristics: [
+      "Assisted in daily data center operations and maintenance tasks.",
+      "Collaborated with the infrastructure team to ensure high availability.",
+    ],
+    technologies: ["Linux", "Data Center", "Hardware"],
+    logo: IBM.src,
   },
 ];

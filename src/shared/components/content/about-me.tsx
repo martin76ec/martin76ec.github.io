@@ -60,14 +60,14 @@ export function AboutMe({ className }: Props) {
         <div className="hidden lg:block">
           <NavMenu />
         </div>
-        <div className="relative group">
+        <div className="group relative">
           <div className="absolute -right-12 -top-12 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-5 lg:opacity-5">
             <Icon name="logo-white" className="h-48 w-48 -rotate-12" />
           </div>
           <span className="mb-4 block font-mono text-xs font-semibold tracking-widest text-primary/50">
-            // ABOUT
+            {"// ABOUT"}
           </span>
-          <div className="border-l-2 border-primary/30 pl-6 py-1 transition-all duration-300 hover:border-primary/60">
+          <div className="border-l-2 border-primary/30 py-1 pl-6 transition-all duration-300 hover:border-primary/60">
             <p className="w-full text-lg leading-relaxed text-muted-foreground lg:max-w-md">
               {authorDesc[lang]}
             </p>
@@ -81,6 +81,9 @@ export function AboutMe({ className }: Props) {
           </a>
           <a href={socialLinks.linkedin} target="_blank" rel="noreferrer">
             <Icon name="linkedin" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
+          </a>
+          <a href={socialLinks.monkeytype} target="_blank" rel="noreferrer">
+            <Icon name="monkeytype" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
           </a>
           {/* Spotify and Product Hunt hidden for now */}
           {/* <a href={socialLinks.spotify} target="_blank" rel="noreferrer">

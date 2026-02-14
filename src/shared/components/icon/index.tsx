@@ -5,6 +5,7 @@ import { Instagram } from "./instagram";
 import { Linkedin } from "./linkedin";
 import { LogoWhite } from "./logo-white";
 import { Menu } from "./menu";
+import { Monkeytype } from "./monkeytype";
 import { ProductHunt } from "./product-hunt";
 import { SpainFlag } from "./spain-flag";
 import { Spotify } from "./spotify";
@@ -25,5 +26,6 @@ export function Icon({ name, className }: Props) {
   if (name === "external-link") return <ExternalLink className={className} />;
   if (name === "spotify") return <Spotify className={className} />;
   if (name === "product-hunt") return <ProductHunt className={className} />;
+  if (name === "monkeytype") return <Monkeytype className={className} />;
   return <USFlag className={className} />;
 }
