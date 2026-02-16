@@ -3,6 +3,7 @@ import Musicfy from "@lib/assets/musicfy.png";
 import Portfolio from "@lib/assets/portfolio.png";
 import SvgBuilder from "@lib/assets/svg-builder.png";
 import Znotes from "@lib/assets/znotes.png";
+import EVals from "@lib/assets/e-vals.png"
 
 export interface Project {
   name: string;
@@ -19,6 +20,13 @@ export const projects: Project[] = [
     description: "Platform to learn to code, with video instructions, hints and a built-in code editor.",
     link: "https://www.acodear.com",
     skills: ["TypeScript", "Python", "Docker", "AWS"],
+  },
+  {
+    name: "e-vals",
+    image: EVals.src,
+    description: "A simple web app to evaluate mathematical expressions with a clean interface.",
+    link: "https://github.com/martin76ec/e-vals",
+    skills: ["TypeScript", "React", "Next.js"],
   },
   {
     name: "svg-tsx-builder",
@@ -69,6 +77,13 @@ export const esProjects: Project[] = [
       "Una colección de proyectos diseñada para crear una plataforma de streaming de música autoalojada, que ofrece control total y personalización para tu experiencia musical.",
     link: "https://github.com/martin76ec/musicfy",
     skills: ["TypeScript", "Remix", "SSR", "Rust", "Postgres", "Supabase", "GoAuth", "Docker", "API REST", "API RPC"],
+  },
+  {
+    name: "e-vals",
+    image: EVals.src,
+    description: "Una aplicación web sencilla para evaluar expresiones matemáticas con una interfaz limpia.",
+    link: "https://github.com/martin76ec/e-vals",
+    skills: ["TypeScript", "React", "Next.js"],
   },
   {
     name: "Portfolio v3",
