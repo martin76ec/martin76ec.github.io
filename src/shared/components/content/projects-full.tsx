@@ -3,11 +3,36 @@
 import type { Project } from "@constants/projects";
 import { projects } from "@constants/projects";
 import { Badge } from "@components/ui/badge";
-import { ArrowLeft, Briefcase } from "lucide-react";
-import { ActionSearchBar } from "@components/ui/action-search-bar";
+import { ArrowLeft } from "lucide-react";
 import React from "react";
+import { Input } from "@components/ui/input";
+import { motion, AnimatePresence } from "framer-motion";
 
-export function ProjectCard({ project }: { project: Project }) {
+function Highlight({ text, query }: { text: string; query: string }) {
+  if (!query) return <>{text}</>;
+  const parts = text.split(new RegExp(`(${query})`, "gi"));
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === query.toLowerCase() ? (
+          <span key={i} className="text-primary-foreground bg-primary">
+            {part}
+          </span>
+        ) : (
+          part
+        )
+      )}
+    </>
+  );
+}
+
+export function ProjectCard({
+  project,
+  query,
+}: {
+  project: Project;
+  query: string;
+}) {
   return (
     <div className="border-1 flex min-h-64 w-full select-none flex-col gap-2 rounded border border-muted/80 bg-muted/50 px-8 py-6 backdrop-blur-md hover:bg-accent md:flex-row md:gap-24 lg:gap-8">
       <div className="flex min-w-24 flex-col">
@@ -30,14 +55,20 @@ export function ProjectCard({ project }: { project: Project }) {
               />
             )}
             <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <p className="text-lg text-foreground">{project.name}</p>
+              <p className="text-lg text-foreground">
+                <Highlight text={project.name} query={query} />
+              </p>
             </a>
           </div>
-          <p className="text-md mb-4 text-muted-foreground">{project.description}</p>
+          <p className="text-md mb-4 text-muted-foreground">
+            {project.description}
+          </p>
         </div>
         <div className="flex flex-wrap gap-2">
           {project.skills.map((s) => (
-            <Badge key={s}>{s}</Badge>
+            <Badge key={s}>
+              <Highlight text={s} query={query} />
+            </Badge>
           ))}
         </div>
       </div>
@@ -48,19 +79,9 @@ export function ProjectCard({ project }: { project: Project }) {
 export function ProjectsFull() {
   const [query, setQuery] = React.useState("");
 
-  const projectActions = projects.map((p) => ({
-    id: p.name,
-    label: p.name,
-    icon: <Briefcase className="h-4 w-4" />,
-    description: p.description,
-    end: "Project",
-    short: "",
-  }));
-
   const filteredProjects = projects.filter(
     (p) =>
       p.name.toLowerCase().includes(query.toLowerCase()) ||
-      p.description.toLowerCase().includes(query.toLowerCase()) ||
       p.skills.some((s) => s.toLowerCase().includes(query.toLowerCase()))
   );
   return (
@@ -74,15 +95,30 @@ export function ProjectsFull() {
         </div>
         <div className="flex flex-col gap-4">
           <p className="text-3xl font-bold">Projects</p>
-          <ActionSearchBar actions={projectActions} setQuery={setQuery} query={query} />
+          <Input
+            placeholder="Search by name or tags..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="h-16 w-full text-2xl"
+          />
         </div>
       </div>
       <div className="mt-12">
-        <div className="flex flex-col gap-4">
-          {filteredProjects.map((p) => (
-            <ProjectCard key={p.name} project={p} />
-          ))}
-        </div>
+        <motion.div layout className="flex flex-col gap-4">
+          <AnimatePresence>
+            {filteredProjects.map((p) => (
+              <motion.div
+                key={p.name}
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <ProjectCard project={p} query={query} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </div>
   );
