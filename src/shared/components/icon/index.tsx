@@ -1,3 +1,4 @@
+import { CalIcon } from "./cal";
 import type { IconName } from "./types";
 import { ExternalLink } from "./external-link";
 import { Github } from "./github";
@@ -27,5 +28,6 @@ export function Icon({ name, className }: Props) {
   if (name === "spotify") return <Spotify className={className} />;
   if (name === "product-hunt") return <ProductHunt className={className} />;
   if (name === "monkeytype") return <Monkeytype className={className} />;
+  if (name === "cal") return <CalIcon className={className} />;
   return <USFlag className={className} />;
 }

@@ -26,7 +26,7 @@ export function Summary({ className }: Props) {
           </div>
           <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
             <a className="flex gap-1" href="/blog">
-              All my posts
+              More (Blog Posts)
             </a>
             <ArrowRight name="external-link" className="h-3.5 w-3.5 md:h-4 md:w-4" />
           </span>
@@ -41,7 +41,7 @@ export function Summary({ className }: Props) {
           </div>
           <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
             <a className="flex gap-1" href="/projects">
-              all my projects
+              More (Projects) 
             </a>
             <ArrowRight name="external-link" className="h-3.5 w-3.5 md:h-4 md:w-4" />
           </span>
@@ -56,7 +56,7 @@ export function Summary({ className }: Props) {
           </div>
           <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
             <a className="flex gap-1" href="/experience">
-              Browse details
+              Details
             </a>
             <ArrowRight name="external-link" className="h-3.5 w-3.5 md:h-4 md:w-4" />
           </span>

@@ -89,6 +89,9 @@ export function AboutMe({ className }: Props) {
           {/* <a href={socialLinks.spotify} target="_blank" rel="noreferrer">
             <Icon name="spotify" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
           </a>
+          <a href={socialLinks.cal} target="_blank" rel="noreferrer">
+            <Icon name="cal" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
+          </a>
           <a href={socialLinks.productHunt} target="_blank" rel="noreferrer">
             <Icon name="product-hunt" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
           </a> */}
