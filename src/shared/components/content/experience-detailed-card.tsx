@@ -44,9 +44,9 @@ function DetailedCard({ exp }: { exp: DetailedExperience }) {
                 className="h-10 w-10 rounded-md bg-white object-contain md:hidden"
               />
             )}
-            <p className="text-lg text-foreground">{exp.activity}</p>
+            <p className="text-base text-foreground md:text-lg">{exp.activity}</p>
           </div>
-          <p className="text-md text-muted-foreground">{exp.description}</p>
+          <p className="text-sm text-muted-foreground md:text-base">{exp.description}</p>
         </div>
         <div className="text-muted-foreground">
           <CollapsibleButton label="Details">
@@ -64,7 +64,7 @@ function DetailedCard({ exp }: { exp: DetailedExperience }) {
               {exp.characteristics.map((e, idx) => (
                 <motion.li
                   key={`${exp.activity}-${idx}`}
-                  className="text-md rounded border border-muted-foreground/30 bg-background px-4 py-2 font-mono"
+                  className="text-xs rounded border border-muted-foreground/30 bg-background px-4 py-2 font-mono md:text-sm"
                   variants={item}
                   exit="exit"
                   layout

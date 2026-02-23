@@ -5,7 +5,7 @@ export function ExperienceCard({ exp }: { exp: Experience }) {
   return (
     <div className="border-1 flex min-h-64 w-full select-none flex-col gap-2 rounded border border-muted/80 bg-muted/50 px-8 py-6 backdrop-blur-md hover:bg-accent md:flex-row md:gap-24 lg:gap-8">
       <div className="flex min-w-24 flex-col">
-        <p className="text-md text-muted-foreground">
+        <p className="text-sm text-muted-foreground md:text-base">
           {exp.start} - {exp.end}
         </p>
         {exp.logo && (
@@ -26,9 +26,9 @@ export function ExperienceCard({ exp }: { exp: Experience }) {
                 className="h-10 w-10 rounded-md bg-transparent object-contain md:hidden"
               />
             )}
-            <p className="text-lg text-foreground">{exp.role}</p>
+            <p className="text-base text-foreground md:text-lg">{exp.role}</p>
           </div>
-          <p className="text-md mb-4 text-muted-foreground">{exp.description}</p>
+          <p className="text-sm mb-4 text-muted-foreground md:text-base">{exp.description}</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {exp.skills.map((s) => (

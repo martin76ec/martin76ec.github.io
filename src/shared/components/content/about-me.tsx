@@ -53,8 +53,8 @@ export function AboutMe({ className }: Props) {
     <div className={cn("flex h-full w-full flex-col justify-start gap-16", className)}>
       <div className="flex flex-col justify-start gap-12">
         <div>
-          <p className="text-5xl font-bold">{authorName}</p>
-          <p className="mt-2 text-2xl">{authorRole[lang]}</p>
+          <p className="text-3xl font-bold sm:text-4xl md:text-5xl">{authorName}</p>
+          <p className="mt-2 text-lg sm:text-xl md:text-2xl">{authorRole[lang]}</p>
           <p className="hidden font-mono text-sm text-muted-foreground lg:block">[Arch user btw]</p>
         </div>
         <div className="hidden lg:block">
@@ -68,7 +68,7 @@ export function AboutMe({ className }: Props) {
             {"// ABOUT"}
           </span>
           <div className="border-l-2 border-primary/30 py-1 pl-6 transition-all duration-300 hover:border-primary/60">
-            <p className="w-full text-lg leading-relaxed text-muted-foreground lg:max-w-md">
+            <p className="w-full text-base leading-relaxed text-muted-foreground md:text-lg lg:max-w-md">
               {authorDesc[lang]}
             </p>
           </div>

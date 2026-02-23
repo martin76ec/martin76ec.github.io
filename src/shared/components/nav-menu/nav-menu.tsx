@@ -15,7 +15,7 @@ interface Opt {
   label: string;
 }
 
-const defOpts: Opt[] = [{ label: "blog" }, { label: "projects" }, { label: "experience" }];
+const defOpts: Opt[] = [{ label: "experience" }, { label: "projects" }, { label: "blog" }];
 
 function Item({ children, to }: ItemProps) {
   return (
@@ -25,7 +25,7 @@ function Item({ children, to }: ItemProps) {
       smooth={true}
       containerId="scroll-content"
       activeClass="active"
-      className="group flex h-8 w-full cursor-pointer rounded text-lg font-thin transition-all [&.active]:font-medium [&.active]:text-white"
+      className="group flex h-8 w-full cursor-pointer rounded text-base font-thin transition-all md:text-lg [&.active]:font-medium [&.active]:text-white"
     >
       <div className="flex w-full items-center justify-start gap-2">
         <div

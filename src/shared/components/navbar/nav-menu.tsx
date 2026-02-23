@@ -28,7 +28,7 @@ export function NavMenu() {
               to="experience"
               smooth={true}
               spy={true}
-              className="flex h-16 items-center rounded px-4 hover:bg-accent"
+              className="flex h-16 items-center rounded px-4 text-sm hover:bg-accent md:text-base"
               onClick={() => setOpen(false)}
             >
               {NAVBAR.experience[lang]}
@@ -38,7 +38,7 @@ export function NavMenu() {
               to="projects"
               smooth={true}
               spy={true}
-              className="flex h-16 items-center rounded px-4 hover:bg-accent"
+              className="flex h-16 items-center rounded px-4 text-sm hover:bg-accent md:text-base"
               onClick={() => setOpen(false)}
             >
               {NAVBAR.projects[lang]}

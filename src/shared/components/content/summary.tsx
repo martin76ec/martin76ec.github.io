@@ -21,8 +21,8 @@ export function Summary({ className }: Props) {
       <div id="experience" className="flex w-full flex-col justify-start gap-4">
         <div className="sticky top-0 z-20 flex items-center justify-between bg-background/95 py-4 backdrop-blur-sm">
           <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold">{SUMMARY.experience[lang]}</h1>
-            <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subExperience[lang]}]</span>
+            <h1 className="text-lg font-bold md:text-xl">{SUMMARY.experience[lang]}</h1>
+            <span className="text-sm hidden text-muted-foreground md:block">[{SUMMARY.subExperience[lang]}]</span>
           </div>
           <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
             <a className="flex gap-1" href="/experience">
@@ -36,8 +36,8 @@ export function Summary({ className }: Props) {
       <div id="projects" className="flex w-full flex-col justify-start gap-4">
         <div className="sticky top-0 z-20 flex items-center justify-between bg-background/95 py-4 backdrop-blur-sm">
           <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold">{SUMMARY.projects[lang]}</h1>
-            <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subProjects[lang]}]</span>
+            <h1 className="text-lg font-bold md:text-xl">{SUMMARY.projects[lang]}</h1>
+            <span className="text-sm hidden text-muted-foreground md:block">[{SUMMARY.subProjects[lang]}]</span>
           </div>
           <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
             <a className="flex gap-1" href="/projects">
@@ -51,8 +51,8 @@ export function Summary({ className }: Props) {
       <div id="blog" className="flex w-full flex-col justify-start gap-4">
         <div className="sticky top-0 z-20 flex items-center justify-between bg-background/95 py-4 backdrop-blur-sm">
           <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold">{SUMMARY.blog[lang]}</h1>
-            <span className="text-md hidden text-muted-foreground md:block">[{SUMMARY.subBlogs[lang]}]</span>
+            <h1 className="text-lg font-bold md:text-xl">{SUMMARY.blog[lang]}</h1>
+            <span className="text-sm hidden text-muted-foreground md:block">[{SUMMARY.subBlogs[lang]}]</span>
           </div>
           <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
             <a className="flex gap-1" href="/blog">

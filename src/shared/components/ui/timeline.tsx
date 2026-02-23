@@ -30,13 +30,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   return (
     <div className="w-full md:px-10" ref={containerRef}>
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-10">
-        <div className="text-md flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline">
+        <div className="text-sm flex items-center gap-2 text-muted-foreground hover:text-foreground hover:underline md:text-base">
           <ArrowLeft className="h-4 w-4" />
           <a href="/">
             <span>Go back</span>
           </a>
         </div>
-        <p className="text-3xl font-bold">Experience</p>
+        <p className="text-2xl font-bold md:text-3xl">Experience</p>
       </div>
 
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
@@ -52,7 +52,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             <div className="relative w-full pl-10 pr-4 md:pl-0">
-              <h3 className="ml-4 mb-4 block text-left text-2xl font-bold text-muted-foreground md:hidden">
+              <h3 className="ml-4 mb-4 block text-left text-xl font-bold text-muted-foreground md:hidden">
                 {item.title}
               </h3>
               {item.content}

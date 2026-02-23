@@ -55,12 +55,12 @@ export function ProjectCard({
               />
             )}
             <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <p className="text-lg text-foreground">
+              <p className="text-base text-foreground md:text-lg">
                 <Highlight text={project.name} query={query} />
               </p>
             </a>
           </div>
-          <p className="text-md mb-4 text-muted-foreground">
+          <p className="text-sm mb-4 text-muted-foreground md:text-base">
             {project.description}
           </p>
         </div>
@@ -94,12 +94,12 @@ export function ProjectsFull() {
           </a>
         </div>
         <div className="flex flex-col gap-4">
-          <p className="text-3xl font-bold">Projects</p>
+          <p className="text-2xl font-bold md:text-3xl">Projects</p>
           <Input
             placeholder="Search by name or tags..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="h-16 w-full text-2xl"
+            className="h-16 w-full text-xl md:text-2xl"
           />
         </div>
       </div>

@@ -32,12 +32,12 @@ export function BlogCard({ post }: BlogCardProps) {
         <div className="flex flex-col justify-between w-full">
           <div className="flex flex-col gap-2">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
-                <p className="text-lg text-foreground font-medium">{post.title}</p>
+                <p className="text-base text-foreground font-medium md:text-lg">{post.title}</p>
                 <p className="text-xs text-muted-foreground md:text-right whitespace-nowrap">
                     {new Date(post.pubDate).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' })}
                 </p>
             </div>
-            <p className="text-md mb-4 text-muted-foreground line-clamp-3">{post.description}</p>
+            <p className="text-sm mb-4 text-muted-foreground line-clamp-3 md:text-base">{post.description}</p>
           </div>
           <div className="flex flex-wrap gap-2">
             {post.categories.map((c) => (

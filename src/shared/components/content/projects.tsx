@@ -20,8 +20,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
         <div className="flex flex-col justify-between">
           <div className="flex flex-col gap-2">
-            <p className="text-lg text-foreground">{project.name}</p>
-            <p className="text-md mb-4 text-muted-foreground">{project.description}</p>
+            <p className="text-base text-foreground md:text-lg">{project.name}</p>
+            <p className="text-sm mb-4 text-muted-foreground md:text-base">{project.description}</p>
           </div>
           <div className="flex flex-wrap gap-2">
             {project.skills.map((s) => (

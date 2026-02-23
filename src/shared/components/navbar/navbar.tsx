@@ -53,7 +53,7 @@ export function Navbar({ className, ...props }: Props) {
                 spy={true}
                 containerId={containerId}
                 className={cn(
-                  "flex h-full min-w-32 select-none items-center justify-center text-foreground hover:bg-accent",
+                  "flex h-full min-w-32 select-none items-center justify-center text-sm text-foreground hover:bg-accent md:text-base",
                   "cursor-pointer"
                 )}
               >
@@ -67,7 +67,7 @@ export function Navbar({ className, ...props }: Props) {
                 spy={true}
                 containerId={containerId}
                 className={cn(
-                  "flex h-full min-w-32 select-none items-center justify-center text-foreground hover:bg-accent",
+                  "flex h-full min-w-32 select-none items-center justify-center text-sm text-foreground hover:bg-accent md:text-base",
                   "cursor-pointer"
                 )}
               >
