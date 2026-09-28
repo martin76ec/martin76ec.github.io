@@ -12,18 +12,21 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <a href={project.link} target="_blank" rel="noreferrer">
-      <div className="group/project flex min-h-64 w-full cursor-pointer flex-col-reverse gap-4 rounded bg-muted/50 px-8 py-6 backdrop-blur-md hover:bg-accent md:flex-row md:gap-24 lg:gap-8">
-        <div className="flex min-w-fit flex-col pt-2">
-          <div className="box-border w-fit rounded border border-muted-foreground/30 group-hover/project:border-muted-foreground/50">
-            <img src={project.image} className="w-40 rounded md:w-24" />
+      <div className="group/project flex h-80 w-full cursor-pointer flex-col-reverse gap-4 overflow-hidden rounded-none bg-muted/50 px-6 py-4 backdrop-blur-md hover:bg-accent md:h-36 md:flex-row md:gap-8">
+        <div className="flex min-w-fit flex-col pt-1">
+          <div className="box-border w-fit rounded-none border border-muted-foreground/30 group-hover/project:border-muted-foreground/50">
+            <img
+              src={project.image}
+              className="w-32 rounded-none grayscale transition-[filter] duration-300 group-hover/project:grayscale-0 md:w-20"
+            />
           </div>
         </div>
-        <div className="flex flex-col justify-between">
-          <div className="flex flex-col gap-2">
+        <div className="flex flex-col justify-between gap-2">
+          <div className="flex flex-col gap-1.5">
             <p className="text-base text-foreground md:text-lg">{project.name}</p>
-            <p className="text-sm mb-4 text-muted-foreground md:text-base">{project.description}</p>
+            <p className="line-clamp-2 text-sm text-muted-foreground md:text-base">{project.description}</p>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 overflow-hidden">
             {project.skills.map((s) => (
               <Badge key={s}>{s}</Badge>
             ))}

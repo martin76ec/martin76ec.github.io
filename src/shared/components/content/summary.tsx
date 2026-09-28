@@ -1,6 +1,7 @@
 import { MAX_BLOG_POSTS_HOME, SUMMARY } from "@constants/defaults";
 import { esExperiences, experiences } from "@constants/experience";
 import { esProjects, projects } from "@constants/projects";
+import { TerminalLabel } from "@components/ui/terminal-label";
 import { cn } from "@lib/utils";
 import { useStore } from "@nanostores/react";
 import { ArrowRight } from "lucide-react";
@@ -22,7 +23,9 @@ export function Summary({ className }: Props) {
         <div className="sticky top-0 z-20 flex items-center justify-between bg-background/95 py-4 backdrop-blur-sm">
           <div className="flex items-center gap-2">
             <h1 className="text-lg font-bold md:text-xl">{SUMMARY.experience[lang]}</h1>
-            <span className="text-sm hidden text-muted-foreground md:block">[{SUMMARY.subExperience[lang]}]</span>
+            <TerminalLabel variant="bracket" className="hidden text-sm md:inline-flex">
+              {SUMMARY.subExperience[lang]}
+            </TerminalLabel>
           </div>
           <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
             <a className="flex gap-1" href="/experience">
@@ -37,7 +40,9 @@ export function Summary({ className }: Props) {
         <div className="sticky top-0 z-20 flex items-center justify-between bg-background/95 py-4 backdrop-blur-sm">
           <div className="flex items-center gap-2">
             <h1 className="text-lg font-bold md:text-xl">{SUMMARY.projects[lang]}</h1>
-            <span className="text-sm hidden text-muted-foreground md:block">[{SUMMARY.subProjects[lang]}]</span>
+            <TerminalLabel variant="bracket" className="hidden text-sm md:inline-flex">
+              {SUMMARY.subProjects[lang]}
+            </TerminalLabel>
           </div>
           <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
             <a className="flex gap-1" href="/projects">
@@ -52,7 +57,9 @@ export function Summary({ className }: Props) {
         <div className="sticky top-0 z-20 flex items-center justify-between bg-background/95 py-4 backdrop-blur-sm">
           <div className="flex items-center gap-2">
             <h1 className="text-lg font-bold md:text-xl">{SUMMARY.blog[lang]}</h1>
-            <span className="text-sm hidden text-muted-foreground md:block">[{SUMMARY.subBlogs[lang]}]</span>
+            <TerminalLabel variant="bracket" className="hidden text-sm md:inline-flex">
+              {SUMMARY.subBlogs[lang]}
+            </TerminalLabel>
           </div>
           <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
             <a className="flex gap-1" href="/blog">

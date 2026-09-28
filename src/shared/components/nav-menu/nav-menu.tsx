@@ -25,12 +25,12 @@ function Item({ children, to }: ItemProps) {
       smooth={true}
       containerId="scroll-content"
       activeClass="active"
-      className="group flex h-8 w-full cursor-pointer rounded text-base font-thin transition-all md:text-lg [&.active]:font-medium [&.active]:text-white"
+      className="group flex h-8 w-full cursor-pointer rounded-none text-base text-muted-foreground opacity-60 transition-all md:text-lg [&.active]:font-medium [&.active]:text-white [&.active]:opacity-100"
     >
       <div className="flex w-full items-center justify-start gap-2">
         <div
           className={cn(
-            "h-[4px] w-1/6 rounded bg-muted-foreground transition-all duration-300 ease-in-out",
+            "h-[4px] w-1/6 rounded-none bg-muted-foreground transition-all duration-300 ease-in-out",
             "group-[.active]:w-2/4 group-[.active]:bg-white"
           )}
         />

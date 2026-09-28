@@ -20,6 +20,10 @@ export default {
   		}
   	},
   	extend: {
+  		fontFamily: {
+  			sans: ['"0xProto"', "ui-monospace", "monospace"],
+  			mono: ['"0xProto"', "ui-monospace", "monospace"]
+  		},
   		colors: {
                 ...brandColors,
   			border: 'hsl(var(--border))',
@@ -106,6 +110,14 @@ export default {
   					transform: 'rotate(360deg)'
   				}
   			},
+  			blink: {
+  				'0%, 100%': {
+  					opacity: 1
+  				},
+  				'50%': {
+  					opacity: 0
+  				}
+  			},
   			'accordion-down': {
   				from: {
   					height: '0'
@@ -128,7 +140,8 @@ export default {
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			morph: 'morph 30s infinite, rotate 40s infinite',
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			blink: 'blink 1s step-end infinite'
   		},
   		spacing: {
                 ...brandSpacing

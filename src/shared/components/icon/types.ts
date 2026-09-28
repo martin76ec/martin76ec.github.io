@@ -1,1 +1,1 @@
-export type IconName = "github" | "instagram" | "linkedin" | "logo-white" | "spain-flag" | "us-flag" | "menu" | "external-link" | "spotify" | "product-hunt" | "monkeytype" | "cal";
+export type IconName = "github" | "instagram" | "linkedin" | "logo-white" | "spain-flag" | "us-flag" | "menu" | "external-link" | "spotify" | "product-hunt" | "monkeytype" | "cal" | "youtube";

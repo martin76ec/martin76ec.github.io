@@ -11,6 +11,7 @@ import { ProductHunt } from "./product-hunt";
 import { SpainFlag } from "./spain-flag";
 import { Spotify } from "./spotify";
 import { USFlag } from "./us-flag";
+import { Youtube } from "./youtube";
 
 interface Props {
   name: IconName;
@@ -29,5 +30,6 @@ export function Icon({ name, className }: Props) {
   if (name === "product-hunt") return <ProductHunt className={className} />;
   if (name === "monkeytype") return <Monkeytype className={className} />;
   if (name === "cal") return <CalIcon className={className} />;
+  if (name === "youtube") return <Youtube className={className} />;
   return <USFlag className={className} />;
 }

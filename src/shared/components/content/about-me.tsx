@@ -1,6 +1,7 @@
 import { Icon } from "@components/icon";
 import { NavMenu } from "@components/nav-menu/nav-menu";
 import { Button } from "@components/ui/button";
+import { TerminalLabel } from "@components/ui/terminal-label";
 import { authorDesc, authorName, authorRole, socialLinks } from "@constants/aboutme";
 import { cn } from "@lib/utils";
 import { useStore } from "@nanostores/react";
@@ -28,7 +29,7 @@ function CopyField({ value, label }: { value: string; label: string }) {
   };
 
   return (
-    <div className="bg-muted-accent/50 flex max-w-full items-center justify-between gap-2 rounded-lg border border-accent p-2 text-muted-foreground backdrop-blur-2xl lg:max-w-96">
+    <div className="bg-muted-accent/50 flex max-w-full items-center justify-between gap-2 rounded-none border border-accent p-2 text-muted-foreground backdrop-blur-2xl lg:max-w-96">
       <code className="truncate rounded p-1 text-xs">{value}</code>
       <Button
         variant="outline"
@@ -53,6 +54,9 @@ export function AboutMe({ className }: Props) {
     <div className={cn("flex h-full w-full flex-col justify-start gap-16", className)}>
       <div className="flex flex-col justify-start gap-12">
         <div>
+          <TerminalLabel variant="prompt" cursor className="mb-1 text-sm">
+            whoami
+          </TerminalLabel>
           <p className="text-3xl font-bold sm:text-4xl md:text-5xl">{authorName}</p>
           <p className="mt-2 text-lg sm:text-xl md:text-2xl">{authorRole[lang]}</p>
           <p className="hidden font-mono text-sm text-muted-foreground lg:block">[Arch user btw]</p>
@@ -64,9 +68,9 @@ export function AboutMe({ className }: Props) {
           <div className="absolute -right-12 -top-12 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-5 lg:opacity-5">
             <Icon name="logo-white" className="h-48 w-48 -rotate-12" />
           </div>
-          <span className="mb-4 block font-mono text-xs font-semibold tracking-widest text-primary/50">
-            {"// ABOUT"}
-          </span>
+          <TerminalLabel variant="comment" className="mb-4 block">
+            ABOUT
+          </TerminalLabel>
           <div className="border-l-2 border-primary/30 py-1 pl-6 transition-all duration-300 hover:border-primary/60">
             <p className="w-full text-base leading-relaxed text-muted-foreground md:text-lg lg:max-w-md">
               {authorDesc[lang]}
@@ -84,6 +88,9 @@ export function AboutMe({ className }: Props) {
           </a>
           <a href={socialLinks.monkeytype} target="_blank" rel="noreferrer">
             <Icon name="monkeytype" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
+          </a>
+          <a href={socialLinks.youtube} target="_blank" rel="noreferrer">
+            <Icon name="youtube" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
           </a>
           {/* Spotify and Product Hunt hidden for now */}
           {/* <a href={socialLinks.spotify} target="_blank" rel="noreferrer">

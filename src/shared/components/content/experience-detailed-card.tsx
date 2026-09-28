@@ -24,25 +24,21 @@ function DetailedCard({ exp }: { exp: DetailedExperience }) {
   };
 
   return (
-    <div className="border-1 flex min-h-64 w-full select-none flex-col gap-2 rounded border border-muted/80 bg-muted/50 px-8 py-6 backdrop-blur-md hover:bg-accent md:flex-row md:gap-24 lg:gap-8">
+    <div className="border-1 flex min-h-64 w-full select-none flex-col gap-2 rounded-none border border-muted/80 bg-muted/50 px-8 py-6 backdrop-blur-md hover:bg-accent md:flex-row md:gap-24 lg:gap-8">
       <div className="flex min-w-24 flex-col">
         {exp.logo && (
-          <img
-            src={exp.logo}
-            alt={exp.company}
-            className="hidden h-12 w-12 rounded-md bg-white object-contain md:block"
-          />
+          <div className="hidden box-border w-fit rounded-md border border-muted-foreground/30 bg-white p-1.5 md:block">
+            <img src={exp.logo} alt={exp.company} className="h-9 w-9 object-contain" />
+          </div>
         )}
       </div>
       <div className="flex flex-col justify-between gap-12">
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-4">
             {exp.logo && (
-              <img
-                src={exp.logo}
-                alt={exp.company}
-                className="h-10 w-10 rounded-md bg-white object-contain md:hidden"
-              />
+              <div className="box-border w-fit rounded-md border border-muted-foreground/30 bg-white p-1 md:hidden">
+                <img src={exp.logo} alt={exp.company} className="h-8 w-8 object-contain" />
+              </div>
             )}
             <p className="text-base text-foreground md:text-lg">{exp.activity}</p>
           </div>

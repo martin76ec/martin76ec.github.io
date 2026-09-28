@@ -1,7 +1,6 @@
 ---
 import LogoWhite from "@lib/assets/logo-white.svg";
 import PortfolioPreview from "@lib/assets/og.png";
-import { Squares } from "@components/ui/squares-background";
 import { Toaster } from "@components/ui/sonner";
 import "@styles/global.css";
 
@@ -64,14 +63,6 @@ const socialImageURL = new URL(image, Astro.site);
     <meta property="twitter:image" content={socialImageURL} />
   </head>
   <body class="bg-background">
-    <div class="absolute z-0 w-full h-full">
-      <Squares
-        client:idle
-        direction="diagonal"
-        speed={0.5}
-        squareSize={40}
-      />
-    </div>
     <div class="absolute z-0 w-full h-dvh py-16">
       <Toaster client:only />
       <slot />
