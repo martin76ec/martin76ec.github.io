@@ -5,6 +5,7 @@ import SvgBuilder from "@lib/assets/svg-builder.png";
 import Znotes from "@lib/assets/znotes.png";
 import EVals from "@lib/assets/e-vals.png"
 import SamVsYolo from "@lib/assets/sam-vs-yolo.png";
+import GlobalConnect from "@lib/assets/global-connect.png";
 
 export interface Project {
   name: string;
@@ -31,6 +32,14 @@ export const projects: Project[] = [
       "Live segmentation comparison between lightweight versions of YOLO and SAM, tested in real time using SuperTuxKart as the testing ground.",
     link: "https://martin76ec.github.io/sam-vs-yolo/",
     skills: ["Python", "YOLO", "SAM", "Computer Vision"],
+  },
+  {
+    name: "GlobalConnect",
+    image: GlobalConnect.src,
+    description:
+      "GlobalProtect-compatible VPN plugin for the Omarchy bar. Lists, connects, and disconnects NetworkManager VPN profiles (OpenConnect and OpenVPN) without ever touching sudo.",
+    link: "https://plugins.omarchy.org/plugin.html?id=dev.martin.global-connect",
+    skills: ["Python", "QML", "NetworkManager", "Linux"],
   },
   {
     name: "e-vals",
@@ -74,6 +83,14 @@ export const esProjects: Project[] = [
       "Comparación en vivo de segmentación entre versiones ligeras de YOLO y SAM, probadas en tiempo real usando SuperTuxKart como banco de pruebas.",
     link: "https://martin76ec.github.io/sam-vs-yolo/",
     skills: ["Python", "YOLO", "SAM", "Visión por computadora"],
+  },
+  {
+    name: "GlobalConnect",
+    image: GlobalConnect.src,
+    description:
+      "Plugin de VPN compatible con GlobalProtect para la barra de Omarchy. Lista, conecta y desconecta perfiles VPN de NetworkManager (OpenConnect y OpenVPN) sin usar sudo.",
+    link: "https://plugins.omarchy.org/plugin.html?id=dev.martin.global-connect",
+    skills: ["Python", "QML", "NetworkManager", "Linux"],
   },
   {
     name: "svg-tsx-builder",
