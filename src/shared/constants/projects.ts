@@ -6,6 +6,7 @@ import Znotes from "@lib/assets/znotes.png";
 import EVals from "@lib/assets/e-vals.png"
 import SamVsYolo from "@lib/assets/sam-vs-yolo.png";
 import GlobalConnect from "@lib/assets/global-connect.png";
+import JepaLnn from "@lib/assets/jepa-lnn.png";
 
 export interface Project {
   name: string;
@@ -40,6 +41,14 @@ export const projects: Project[] = [
       "GlobalProtect-compatible VPN plugin for the Omarchy bar. Lists, connects, and disconnects NetworkManager VPN profiles (OpenConnect and OpenVPN) without ever touching sudo.",
     link: "https://plugins.omarchy.org/plugin.html?id=dev.martin.global-connect",
     skills: ["Python", "QML", "NetworkManager", "Linux"],
+  },
+  {
+    name: "jepa-lnn",
+    image: JepaLnn.src,
+    description:
+      "Controlled experiments swapping LeWM's PushT world-model predictor for other architectures (Transformer, MLP, Liquid Neural Network), with a post-hoc decoder for qualitative rollout inspection.",
+    link: "https://github.com/martin76ec/jepa-lnn",
+    skills: ["Python", "PyTorch", "JEPA", "Liquid Neural Networks"],
   },
   {
     name: "e-vals",
@@ -91,6 +100,14 @@ export const esProjects: Project[] = [
       "Plugin de VPN compatible con GlobalProtect para la barra de Omarchy. Lista, conecta y desconecta perfiles VPN de NetworkManager (OpenConnect y OpenVPN) sin usar sudo.",
     link: "https://plugins.omarchy.org/plugin.html?id=dev.martin.global-connect",
     skills: ["Python", "QML", "NetworkManager", "Linux"],
+  },
+  {
+    name: "jepa-lnn",
+    image: JepaLnn.src,
+    description:
+      "Experimentos controlados reemplazando el predictor del modelo de mundo PushT de LeWM por otras arquitecturas (Transformer, MLP, Liquid Neural Network), con un decoder post-hoc para inspección cualitativa de rollouts.",
+    link: "https://github.com/martin76ec/jepa-lnn",
+    skills: ["Python", "PyTorch", "JEPA", "Liquid Neural Networks"],
   },
   {
     name: "svg-tsx-builder",
