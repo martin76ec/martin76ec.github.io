@@ -2,7 +2,7 @@ import { Progress } from "@components/ui/progress";
 import { NAVBAR } from "@constants/defaults";
 import { useBreakPoint } from "@hooks/use-breakpoint";
 import { useScrollProgress } from "@hooks/use-scroll-progress";
-import LogoDark from "@lib/assets/logo-dark.png";
+import LogoBlack from "@lib/assets/logo-black.png";
 import LogoWhite from "@lib/assets/logo-white.svg";
 import { cn } from "@lib/utils";
 import { useStore } from "@nanostores/react";
@@ -44,7 +44,7 @@ export function Navbar({ className, ...props }: Props) {
           </div>
           <div className="hidden h-full items-center justify-start gap-4 sm:flex">
             <NavButton className="hidden sm:flex">
-              <img className="w-[2.5rem]" src={theme === "dark" ? LogoWhite.src : LogoDark.src} />
+              <img className="w-[2.5rem]" src={theme === "dark" ? LogoWhite.src : LogoBlack.src} />
             </NavButton>
             <div className="flex h-full items-center gap-4">
               <Link
