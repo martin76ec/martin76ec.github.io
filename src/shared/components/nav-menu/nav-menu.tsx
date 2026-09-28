@@ -1,54 +1,102 @@
 import { cn } from "@lib/utils";
-import { type ReactNode, useMemo } from "react";
-import { Link } from "react-scroll";
+import { useEffect, useState } from "react";
 
 interface Props {
   className?: string;
 }
 
-interface ItemProps {
-  children: ReactNode;
-  to: string;
-}
-
 interface Opt {
+  id: string;
   label: string;
 }
 
-const defOpts: Opt[] = [{ label: "experience" }, { label: "projects" }, { label: "blog" }];
+const SECTIONS: Opt[] = [
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "blog", label: "Blog" },
+];
 
-function Item({ children, to }: ItemProps) {
+const ACTIVE_PIXEL_COUNT = 14;
+const INACTIVE_PIXEL_COUNT = 7;
+
+function scrollToSection(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "auto", block: "start" });
+}
+
+function PixelBar({ active }: { active: boolean }) {
   return (
-    <Link
-      to={to}
-      spy={true}
-      smooth={true}
-      containerId="scroll-content"
-      activeClass="active"
-      className="group flex h-8 w-full cursor-pointer rounded-none text-base text-muted-foreground opacity-60 transition-all md:text-lg [&.active]:font-medium [&.active]:text-white [&.active]:opacity-100"
+    <div className="flex items-center">
+      {Array.from({ length: ACTIVE_PIXEL_COUNT }).map((_, i) => {
+        const visible = active || i < INACTIVE_PIXEL_COUNT;
+        return (
+          <span
+            key={i}
+            style={{ transitionDuration: "300ms", transitionTimingFunction: "ease-out" }}
+            className={cn(
+              "h-[7px] transition-all",
+              visible ? "w-[7px] mr-[3px] opacity-100" : "w-0 mr-0 opacity-0",
+              active ? "bg-white" : "bg-muted-foreground/40"
+            )}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+function Item({ id, label, active }: { id: string; label: string; active: boolean }) {
+  return (
+    <a
+      href={`#${id}`}
+      onClick={(e) => {
+        e.preventDefault();
+        scrollToSection(id);
+      }}
+      className={cn(
+        "flex h-8 w-full cursor-pointer rounded-none text-base text-muted-foreground opacity-60 transition-all md:text-lg",
+        active && "font-medium text-white opacity-100"
+      )}
     >
-      <div className="flex w-full items-center justify-start gap-2">
-        <div
-          className={cn(
-            "h-[4px] w-1/6 rounded-none bg-muted-foreground transition-all duration-300 ease-in-out",
-            "group-[.active]:w-2/4 group-[.active]:bg-white"
-          )}
-        />
-        <span className="w-5/6">{children}</span>
+      <div className="flex w-full items-center justify-start gap-3">
+        <PixelBar active={active} />
+        <span>{label}</span>
       </div>
-    </Link>
+    </a>
   );
 }
 
 export function NavMenu({ className }: Props) {
-  const opts = useMemo(() => [...defOpts], []);
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const container = document.getElementById("scroll-content");
+    const targets = SECTIONS.map((s) => document.getElementById(s.id)).filter(
+      (el): el is HTMLElement => el !== null
+    );
+
+    if (!container || targets.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        if (visible.length === 0) return;
+
+        const topMost = visible.reduce((a, b) =>
+          a.boundingClientRect.top <= b.boundingClientRect.top ? a : b
+        );
+        setActiveId(topMost.target.id);
+      },
+      { root: container, rootMargin: "0px 0px -70% 0px", threshold: 0 }
+    );
+
+    targets.forEach((target) => observer.observe(target));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className={cn("flex w-96 flex-col gap-2", className)}>
-      {opts.map((opt) => (
-        <Item key={opt.label} to={opt.label}>
-          {opt.label.charAt(0).toUpperCase() + opt.label.substring(1)}
-        </Item>
+      {SECTIONS.map((opt) => (
+        <Item key={opt.id} id={opt.id} label={opt.label} active={activeId === opt.id} />
       ))}
     </div>
   );
