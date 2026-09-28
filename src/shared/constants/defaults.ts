@@ -44,7 +44,16 @@ export const SUMMARY = {
     en: "Latest Posts",
     es: "Recientes",
   },
+  videos: {
+    en: "Videos",
+    es: "Videos",
+  },
+  subVideos: {
+    en: "Latest Uploads",
+    es: "Recientes",
+  },
 };
 
 export const HIDDEN_BLOG_POSTS = ["Test Blog"];
 export const MAX_BLOG_POSTS_HOME = 3;
+export const MAX_VIDEOS_HOME = 3;

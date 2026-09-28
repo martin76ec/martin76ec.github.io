@@ -1,4 +1,4 @@
-import { MAX_BLOG_POSTS_HOME, SUMMARY } from "@constants/defaults";
+import { MAX_BLOG_POSTS_HOME, MAX_VIDEOS_HOME, SUMMARY } from "@constants/defaults";
 import { esExperiences, experiences } from "@constants/experience";
 import { esProjects, projects } from "@constants/projects";
 import { TerminalLabel } from "@components/ui/terminal-label";
@@ -9,6 +9,7 @@ import { langStore } from "src/shared/stores/lang-store";
 import { BlogList } from "./blogs";
 import { ExperienceList } from "./experience";
 import { ProjectList } from "./projects";
+import { VideoList } from "./videos";
 
 interface Props {
   className?: string;
@@ -69,6 +70,23 @@ export function Summary({ className }: Props) {
           </span>
         </div>
         <BlogList limit={MAX_BLOG_POSTS_HOME} />
+      </div>
+      <div id="videos" className="flex w-full flex-col justify-start gap-4">
+        <div className="sticky top-0 z-20 flex items-center justify-between bg-background/95 py-4 backdrop-blur-sm">
+          <div className="flex items-center gap-2">
+            <h1 className="text-lg font-bold md:text-xl">{SUMMARY.videos[lang]}</h1>
+            <TerminalLabel variant="bracket" className="hidden text-sm md:inline-flex">
+              {SUMMARY.subVideos[lang]}
+            </TerminalLabel>
+          </div>
+          <span className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline md:text-base">
+            <a className="flex gap-1" href="/blog#videos">
+              More (Videos)
+            </a>
+            <ArrowRight name="external-link" className="h-3.5 w-3.5 md:h-4 md:w-4" />
+          </span>
+        </div>
+        <VideoList limit={MAX_VIDEOS_HOME} />
       </div>
     </div>
   );
