@@ -3,7 +3,8 @@
 import type { Project } from "@constants/projects";
 import { projects } from "@constants/projects";
 import { Badge } from "@components/ui/badge";
-import { ArrowLeft } from "lucide-react";
+import { cn } from "@lib/utils";
+import { ArrowLeft, Star } from "lucide-react";
 import React from "react";
 import { Input } from "@components/ui/input";
 import { motion, AnimatePresence } from "framer-motion";
@@ -33,8 +34,14 @@ export function ProjectCard({
   project: Project;
   query: string;
 }) {
+  const { featured } = project;
   return (
-    <div className="border-1 flex min-h-64 w-full select-none flex-col gap-2 rounded-none border border-muted/80 bg-muted/50 px-8 py-6 backdrop-blur-md hover:bg-accent md:flex-row md:gap-24 lg:gap-8">
+    <div
+      className={cn(
+        "border-1 flex min-h-64 w-full select-none flex-col gap-2 rounded-none border border-muted/80 bg-muted/50 px-8 py-6 backdrop-blur-md hover:bg-accent md:flex-row md:gap-24 lg:gap-8",
+        featured && "border-primary/60 bg-primary/5 hover:bg-primary/10"
+      )}
+    >
       <div className="flex min-w-24 flex-col">
         {project.image && (
           <img
@@ -46,7 +53,7 @@ export function ProjectCard({
       </div>
       <div className="flex flex-col justify-between">
         <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             {project.image && (
               <img
                 src={project.image}
@@ -59,6 +66,12 @@ export function ProjectCard({
                 <Highlight text={project.name} query={query} />
               </p>
             </a>
+            {featured && (
+              <Badge variant="outline" className="gap-1 border-primary text-primary">
+                <Star className="h-3 w-3 fill-current" />
+                Featured
+              </Badge>
+            )}
           </div>
           <p className="text-sm mb-4 text-muted-foreground md:text-base">
             {project.description}

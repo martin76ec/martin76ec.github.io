@@ -1,5 +1,7 @@
 import type { Project } from "@constants/projects";
 import { Badge } from "@components/ui/badge";
+import { cn } from "@lib/utils";
+import { Star } from "lucide-react";
 
 interface ProjectListProps {
   value: Project[];
@@ -10,20 +12,42 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const { featured } = project;
   return (
     <a href={project.link} target="_blank" rel="noreferrer">
-      <div className="group/project flex h-80 w-full cursor-pointer flex-col-reverse gap-4 overflow-hidden rounded-none bg-muted/50 px-6 py-4 backdrop-blur-md hover:bg-accent md:h-36 md:flex-row md:gap-8">
+      <div
+        className={cn(
+          "group/project flex h-80 w-full cursor-pointer flex-col-reverse gap-4 overflow-hidden rounded-none bg-muted/50 px-6 py-4 backdrop-blur-md hover:bg-accent md:h-36 md:flex-row md:gap-8",
+          featured && "border border-primary/60 bg-primary/5 hover:bg-primary/10"
+        )}
+      >
         <div className="flex min-w-fit flex-col pt-1">
-          <div className="box-border w-fit rounded-none border border-muted-foreground/30 group-hover/project:border-muted-foreground/50">
+          <div
+            className={cn(
+              "box-border w-fit rounded-none border border-muted-foreground/30 group-hover/project:border-muted-foreground/50",
+              featured && "border-primary/60 group-hover/project:border-primary"
+            )}
+          >
             <img
               src={project.image}
-              className="w-32 rounded-none grayscale transition-[filter] duration-300 group-hover/project:grayscale-0 md:w-20"
+              className={cn(
+                "w-32 rounded-none grayscale transition-[filter] duration-300 group-hover/project:grayscale-0 md:w-20",
+                featured && "grayscale-0"
+              )}
             />
           </div>
         </div>
         <div className="flex flex-col justify-between gap-2">
           <div className="flex flex-col gap-1.5">
-            <p className="text-base text-foreground md:text-lg">{project.name}</p>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="text-base text-foreground md:text-lg">{project.name}</p>
+              {featured && (
+                <Badge variant="outline" className="gap-1 border-primary text-primary">
+                  <Star className="h-3 w-3 fill-current" />
+                  Featured
+                </Badge>
+              )}
+            </div>
             <p className="line-clamp-2 text-sm text-muted-foreground md:text-base">{project.description}</p>
           </div>
           <div className="flex flex-wrap gap-2 overflow-hidden">
