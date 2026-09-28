@@ -9,5 +9,5 @@ const iconConf = {
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), icon(iconConf), react()],
-  site: "https://martin76.github.io",
+  site: "https://martinlarrea.com",
 });

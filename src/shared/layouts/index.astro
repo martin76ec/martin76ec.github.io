@@ -1,5 +1,5 @@
 ---
-import LogoWhite from "@lib/assets/logo-white.svg";
+import LogoDark from "@lib/assets/logo-dark.png";
 import PortfolioPreview from "@lib/assets/og.png";
 import { Toaster } from "@components/ui/sonner";
 import "@styles/global.css";
@@ -27,7 +27,8 @@ const socialImageURL = new URL(image, Astro.site);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href={LogoWhite.src} />
+    <link rel="icon" type="image/png" href={LogoDark.src} />
+    <link rel="apple-touch-icon" href={LogoDark.src} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
@@ -47,8 +48,8 @@ const socialImageURL = new URL(image, Astro.site);
     <meta property="og:image" content={socialImageURL} />
     <meta property="og:image:secure_url" content={socialImageURL} />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1920" />
-    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title} />
     <meta property="og:site_name" content="Martín Larrea" />
 
