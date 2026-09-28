@@ -4,6 +4,7 @@ import Portfolio from "@lib/assets/portfolio.png";
 import SvgBuilder from "@lib/assets/svg-builder.png";
 import Znotes from "@lib/assets/znotes.png";
 import EVals from "@lib/assets/e-vals.png"
+import SamVsYolo from "@lib/assets/sam-vs-yolo.png";
 
 export interface Project {
   name: string;
@@ -14,6 +15,14 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    name: "SAM vs YOLO",
+    image: SamVsYolo.src,
+    description:
+      "Live segmentation comparison between lightweight versions of YOLO and SAM, tested in real time using SuperTuxKart as the testing ground.",
+    link: "https://martin76ec.github.io/sam-vs-yolo/",
+    skills: ["Python", "YOLO", "SAM", "Computer Vision"],
+  },
   {
     name: "Acodear",
     image: Acodear.src,
@@ -47,6 +56,14 @@ export const projects: Project[] = [
 ];
 
 export const esProjects: Project[] = [
+  {
+    name: "SAM vs YOLO",
+    image: SamVsYolo.src,
+    description:
+      "Comparación en vivo de segmentación entre versiones ligeras de YOLO y SAM, probadas en tiempo real usando SuperTuxKart como banco de pruebas.",
+    link: "https://martin76ec.github.io/sam-vs-yolo/",
+    skills: ["Python", "YOLO", "SAM", "Visión por computadora"],
+  },
   {
     name: "Acodear",
     image: Acodear.src,
