@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Fine-Tuning GPT-2 Small in Pure Python (No Notebooks, No AI Code)",
+    "link": "https://www.youtube.com/watch?v=_Z2A4Gl0N1Y",
+    "pubDate": "2026-09-19T20:33:06.000Z",
+    "videoId": "_Z2A4Gl0N1Y",
+    "thumbnail": "https://i4.ytimg.com/vi/_Z2A4Gl0N1Y/hqdefault.jpg",
+    "description": "This is a reproduction of a lab from Sebastian Raschka's book Build a Large Language Model (from Scratch). \n\nThis video doesn't use generated code; however, I used Claude and Gemini to answer my quest"
+  }
+]

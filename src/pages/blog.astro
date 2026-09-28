@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/index.astro";
 import { BlogList } from "@components/content/blogs";
+import { VideoList } from "@components/content/videos";
 import { ScrollArea } from "@components/ui/scroll-area";
 import { ArrowLeft } from "lucide-react";
 ---
@@ -22,6 +23,11 @@ import { ArrowLeft } from "lucide-react";
               <p class="text-2xl font-bold text-foreground md:text-3xl">Blog Posts</p>
             </div>
             <BlogList />
+
+            <div class="mt-16 mb-8">
+              <p class="text-2xl font-bold text-foreground md:text-3xl">Videos</p>
+            </div>
+            <VideoList />
         </div>
       </ScrollArea>
   </div>
