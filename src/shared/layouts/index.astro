@@ -2,6 +2,7 @@
 import LogoBlack from "@lib/assets/logo-black.png";
 import PortfolioPreview from "@lib/assets/og.png";
 import { Toaster } from "@components/ui/sonner";
+import { BackgroundMusic } from "@components/background-music/background-music";
 import { authorName, authorRole, socialLinks } from "@constants/aboutme";
 import "@styles/global.css";
 
@@ -85,6 +86,7 @@ const personSchema = {
   <body class="bg-background">
     <div class="absolute z-0 w-full h-dvh py-16">
       <Toaster client:only />
+      <BackgroundMusic client:load />
       <slot />
     </div>
   </body>
