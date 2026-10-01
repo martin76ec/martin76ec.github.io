@@ -1,6 +1,6 @@
 export const authorName = "Martin Larrea";
 export const authorRole = {
-  en: "Sofware Engineer",
+  en: "Software Engineer",
   es: "Ingeniero de Software y Emprendedor",
 };
 export const authorDesc = {
