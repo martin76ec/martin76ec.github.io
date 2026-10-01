@@ -157,20 +157,21 @@
   top: -12%;
   left: -12%;
   background: radial-gradient(circle, rgba(255, 127, 152, 0.7) 0%, rgba(255, 127, 152, 0.35) 32%, transparent 68%);
-  offset-path: ellipse(30% 24% at 50% 50%);
-  animation: vaporwave-orbit 22s linear infinite;
+  animation: vaporwave-drift-a 16s ease-in-out infinite;
 }
 .vaporwave-blob--mint {
   bottom: -18%;
   right: -12%;
   background: radial-gradient(circle, rgba(94, 234, 180, 0.7) 0%, rgba(94, 234, 180, 0.35) 32%, transparent 68%);
-  offset-path: ellipse(26% 30% at 50% 50%);
-  animation: vaporwave-orbit 27s linear infinite reverse;
+  animation: vaporwave-drift-b 20s ease-in-out infinite;
 }
-/* A closed loop (0% and 100% are the same point), so a plain linear
-   infinite animation orbits continuously with no ping-pong snap-back. */
-@keyframes vaporwave-orbit {
-  to { offset-distance: 100%; }
+@keyframes vaporwave-drift-a {
+  0%, 100% { transform: translate(-10%, -10%) scale(1); }
+  50% { transform: translate(12%, 6%) scale(1.15); }
+}
+@keyframes vaporwave-drift-b {
+  0%, 100% { transform: translate(10%, 10%) scale(1); }
+  50% { transform: translate(-15%, -6%) scale(1.2); }
 }
 @media (prefers-reduced-motion: reduce) {
   .vaporwave-blob {
