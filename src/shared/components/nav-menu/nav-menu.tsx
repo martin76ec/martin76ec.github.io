@@ -18,6 +18,7 @@ const SECTIONS: Opt[] = [
 
 const ACTIVE_PIXEL_COUNT = 14;
 const INACTIVE_PIXEL_COUNT = 7;
+const PIXEL_STAGGER_MS = 35;
 
 function scrollToSection(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "auto", block: "start" });
@@ -28,13 +29,23 @@ function PixelBar({ active }: { active: boolean }) {
     <div className="flex items-center">
       {Array.from({ length: ACTIVE_PIXEL_COUNT }).map((_, i) => {
         const visible = active || i < INACTIVE_PIXEL_COUNT;
+        // The base pixels (the "half heart" segment) toggle color in lockstep.
+        // The extra pixels pop in/out one at a time, like hearts filling or draining.
+        const isExtra = i >= INACTIVE_PIXEL_COUNT;
+        const delay = isExtra
+          ? (active ? i - INACTIVE_PIXEL_COUNT : ACTIVE_PIXEL_COUNT - 1 - i) * PIXEL_STAGGER_MS
+          : 0;
         return (
           <span
             key={i}
-            style={{ transitionDuration: "300ms", transitionTimingFunction: "ease-out" }}
+            style={{
+              transitionDuration: "160ms",
+              transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+              transitionDelay: `${delay}ms`,
+            }}
             className={cn(
-              "h-[7px] transition-all",
-              visible ? "w-[7px] mr-[3px] opacity-100" : "w-0 mr-0 opacity-0",
+              "h-[7px] origin-center transition-all",
+              visible ? "w-[7px] mr-[3px] scale-100 opacity-100" : "w-0 mr-0 scale-0 opacity-0",
               active ? "bg-white" : "bg-muted-foreground/40"
             )}
           />
