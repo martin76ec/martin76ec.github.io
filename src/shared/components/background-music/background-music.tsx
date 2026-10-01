@@ -32,7 +32,8 @@ export function BackgroundMusic() {
           aria-label={open ? "Hide background music" : "Show background music player"}
           aria-pressed={open}
           className={cn(
-            "flex h-10 w-10 items-center justify-center rounded-none border border-muted/40 bg-background/80 text-muted-foreground backdrop-blur-md transition-colors hover:bg-accent hover:text-foreground"
+            "flex h-10 w-10 items-center justify-center rounded-none border border-foreground/20 bg-background/90 text-foreground/80 backdrop-blur-md transition-colors hover:bg-accent hover:text-foreground",
+            !open && "background-music-button"
           )}
         >
           {open ? <X className="h-4 w-4" /> : <Music className="h-4 w-4" />}

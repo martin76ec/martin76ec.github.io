@@ -159,3 +159,21 @@
     animation: none;
   }
 }
+
+/* Gentle pulse inviting a click, only while the player is closed. */
+.background-music-button {
+  animation: background-music-pulse 2.8s ease-in-out infinite;
+}
+@keyframes background-music-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 127, 152, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(255, 127, 152, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .background-music-button {
+    animation: none;
+  }
+}
