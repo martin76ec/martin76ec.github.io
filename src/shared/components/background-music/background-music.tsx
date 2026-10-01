@@ -1,14 +1,16 @@
 import { cn } from "@lib/utils";
 import { Music, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TRACK_ID = "2423539855";
 const TRACK_TITLE = "リサフランク420 / 現代のコンピュー — Macintosh Plus";
 
+// checkerboard and equalizer are disabled (weight 0) for now - revisit later.
+// Set them back to 1 to bring them back into rotation.
 const EFFECTS = [
-  { id: "checkerboard", weight: 1 },
+  { id: "checkerboard", weight: 0 },
   { id: "blobs", weight: 1 },
-  { id: "equalizer", weight: 1 },
+  { id: "equalizer", weight: 0 },
 ] as const;
 type EffectId = (typeof EFFECTS)[number]["id"];
 
@@ -23,6 +25,9 @@ function pickEffect(): EffectId {
 }
 
 const EQ_BAR_COUNT = 56;
+const EQ_DESKTOP_QUERY = "(min-width: 641px)";
+const EQ_COLLISION_STEP = 16;
+const EQ_MIN_HEIGHT = 8;
 
 function createEqualizerBars() {
   return Array.from({ length: EQ_BAR_COUNT }).map((_, i) => ({
@@ -32,12 +37,90 @@ function createEqualizerBars() {
   }));
 }
 
+function isOpenSpot(el: Element | null) {
+  return !el || el === document.body || el === document.documentElement;
+}
+
+// For each bar column, raycasts upward from the viewport bottom (skipping our
+// own pointer-events:none overlay automatically) to find the nearest real UI
+// element, and caps that bar's max rise there - so it visually piles up
+// against cards/text instead of passing behind them.
+function measureEqualizerCeilings(): number[] {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const colWidth = vw / EQ_BAR_COUNT;
+  const ceilings: number[] = [];
+  for (let i = 0; i < EQ_BAR_COUNT; i++) {
+    const x = Math.min(vw - 1, Math.max(0, Math.round((i + 0.5) * colWidth)));
+    let obstructedAt = 0;
+    for (let y = vh - 1; y >= 0; y -= EQ_COLLISION_STEP) {
+      if (!isOpenSpot(document.elementFromPoint(x, y))) {
+        obstructedAt = y;
+        break;
+      }
+    }
+    ceilings.push(Math.max(EQ_MIN_HEIGHT, vh - obstructedAt));
+  }
+  return ceilings;
+}
+
+function useEqualizerCollision(active: boolean) {
+  const [ceilings, setCeilings] = useState<number[] | null>(null);
+
+  useEffect(() => {
+    if (!active) {
+      setCeilings(null);
+      return;
+    }
+
+    const desktop = window.matchMedia(EQ_DESKTOP_QUERY);
+    let debounce: ReturnType<typeof setTimeout> | undefined;
+
+    const recompute = () => {
+      setCeilings(desktop.matches ? measureEqualizerCeilings() : null);
+    };
+    const scheduleRecompute = () => {
+      clearTimeout(debounce);
+      debounce = setTimeout(recompute, 150);
+    };
+
+    requestAnimationFrame(recompute);
+
+    const scrollPanel = document.getElementById("scroll-content");
+    window.addEventListener("resize", scheduleRecompute);
+    window.addEventListener("scroll", scheduleRecompute, { passive: true });
+    scrollPanel?.addEventListener("scroll", scheduleRecompute, { passive: true });
+    desktop.addEventListener("change", scheduleRecompute);
+
+    return () => {
+      clearTimeout(debounce);
+      window.removeEventListener("resize", scheduleRecompute);
+      window.removeEventListener("scroll", scheduleRecompute);
+      scrollPanel?.removeEventListener("scroll", scheduleRecompute);
+      desktop.removeEventListener("change", scheduleRecompute);
+    };
+  }, [active]);
+
+  return ceilings;
+}
+
 export function BackgroundMusic() {
   const [open, setOpen] = useState(false);
-  // Re-rolled only when the player transitions closed -> open (our "play" proxy),
-  // or on a full page reload. Stays fixed for as long as it's open.
-  const [effect, setEffect] = useState<EffectId>(() => pickEffect());
-  const [bars] = useState(createEqualizerBars);
+  // Math.random() must never run during the initial render: that render also
+  // happens server-side, and a client render with different random values
+  // would mismatch the server-rendered HTML and fail hydration. Start with a
+  // fixed, deterministic value and roll the real pick client-side in an
+  // effect (mount-only), after hydration has already succeeded.
+  const [effect, setEffect] = useState<EffectId>(EFFECTS[0].id);
+  const [bars, setBars] = useState<ReturnType<typeof createEqualizerBars>>(() =>
+    Array.from({ length: EQ_BAR_COUNT }).map((_, i) => ({ key: i, duration: 1, delay: 0 }))
+  );
+  const ceilings = useEqualizerCollision(open && effect === "equalizer");
+
+  useEffect(() => {
+    setEffect(pickEffect());
+    setBars(createEqualizerBars());
+  }, []);
 
   const toggle = () => {
     setOpen((wasOpen) => {
@@ -59,11 +142,15 @@ export function BackgroundMusic() {
         )}
         {effect === "equalizer" && (
           <div className="vaporwave-equalizer">
-            {bars.map((bar) => (
+            {bars.map((bar, i) => (
               <span
                 key={bar.key}
                 className="vaporwave-equalizer-bar"
-                style={{ animationDuration: `${bar.duration}s`, animationDelay: `${bar.delay}s` }}
+                style={{
+                  animationDuration: `${bar.duration}s`,
+                  animationDelay: `${bar.delay}s`,
+                  ...(ceilings ? { height: `${ceilings[i]}px` } : {}),
+                }}
               />
             ))}
           </div>
