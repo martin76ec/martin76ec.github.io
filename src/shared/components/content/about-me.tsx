@@ -92,6 +92,9 @@ export function AboutMe({ className }: Props) {
           <a href={socialLinks.youtube} target="_blank" rel="noreferrer">
             <Icon name="youtube" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
           </a>
+          <a href={socialLinks.huggingface} target="_blank" rel="noreferrer">
+            <Icon name="huggingface" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />
+          </a>
           {/* Spotify and Product Hunt hidden for now */}
           {/* <a href={socialLinks.spotify} target="_blank" rel="noreferrer">
             <Icon name="spotify" className="h-8 w-8 fill-muted-foreground hover:fill-foreground" />

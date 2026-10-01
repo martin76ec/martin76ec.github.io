@@ -15,5 +15,6 @@ export const socialLinks = {
   spotify: "https://open.spotify.com/user/grantzero1",
   productHunt: "https://www.producthunt.com/@martin76ec",
   monkeytype: "https://monkeytype.com/profile/martin76ec",
+  huggingface: "https://huggingface.co/martin76ec",
   email: "martin.elarrea27@gmail.com",
 };

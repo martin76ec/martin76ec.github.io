@@ -2,6 +2,7 @@ import { CalIcon } from "./cal";
 import type { IconName } from "./types";
 import { ExternalLink } from "./external-link";
 import { Github } from "./github";
+import { HuggingFace } from "./huggingface";
 import { Instagram } from "./instagram";
 import { Linkedin } from "./linkedin";
 import { LogoWhite } from "./logo-white";
@@ -31,5 +32,6 @@ export function Icon({ name, className }: Props) {
   if (name === "monkeytype") return <Monkeytype className={className} />;
   if (name === "cal") return <CalIcon className={className} />;
   if (name === "youtube") return <Youtube className={className} />;
+  if (name === "huggingface") return <HuggingFace className={className} />;
   return <USFlag className={className} />;
 }
