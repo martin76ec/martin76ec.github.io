@@ -113,7 +113,7 @@
   transition: opacity 700ms ease;
 }
 .vaporwave-overlay.is-active {
-  opacity: 0.28;
+  opacity: 1;
 }
 .vaporwave-blob {
   position: absolute;
@@ -122,8 +122,9 @@
   border-radius: 9999px;
   filter: blur(100px);
   mix-blend-mode: screen;
+  opacity: 0.55;
 }
-/* Colors sampled from the Floral Shoppe / "Lisa Frank 420" cover art. */
+/* The two dominant colors sampled from the Floral Shoppe / "Lisa Frank 420" cover art. */
 .vaporwave-blob--pink {
   top: -12%;
   left: -12%;
@@ -136,12 +137,6 @@
   background: #5eeab4;
   animation: vaporwave-drift-b 20s ease-in-out infinite;
 }
-.vaporwave-blob--terracotta {
-  top: 25%;
-  right: 15%;
-  background: #ab5d50;
-  animation: vaporwave-drift-c 24s ease-in-out infinite;
-}
 @keyframes vaporwave-drift-a {
   0%, 100% { transform: translate(-10%, -10%) scale(1); }
   50% { transform: translate(12%, 6%) scale(1.15); }
@@ -149,10 +144,6 @@
 @keyframes vaporwave-drift-b {
   0%, 100% { transform: translate(10%, 10%) scale(1); }
   50% { transform: translate(-15%, -6%) scale(1.2); }
-}
-@keyframes vaporwave-drift-c {
-  0%, 100% { transform: translate(0%, 0%) scale(1); }
-  50% { transform: translate(6%, -15%) scale(1.1); }
 }
 @media (prefers-reduced-motion: reduce) {
   .vaporwave-blob {
