@@ -11,8 +11,7 @@ export function BackgroundMusic() {
   return (
     <>
       <div className={cn("vaporwave-overlay", open && "is-active")} aria-hidden="true">
-        <div className="vaporwave-blob vaporwave-blob--pink" />
-        <div className="vaporwave-blob vaporwave-blob--mint" />
+        <div className="vaporwave-checkerboard" />
       </div>
       <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2">
         {open && (

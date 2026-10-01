@@ -115,38 +115,28 @@
 .vaporwave-overlay.is-active {
   opacity: 1;
 }
-.vaporwave-blob {
+/* The checkerboard floor from the Floral Shoppe / "Lisa Frank 420" cover art,
+   re-colored to the cover's pink + mint duo and softened into a blurred plaid. */
+.vaporwave-checkerboard {
   position: absolute;
-  width: 48vmax;
-  height: 48vmax;
-  border-radius: 9999px;
-  filter: blur(100px);
+  top: -20%;
+  left: -20%;
+  right: -20%;
+  bottom: -20%;
+  background-image: repeating-conic-gradient(#ff7f98 0% 25%, #5eeab4 0% 50%);
+  background-size: 72px 72px;
+  filter: blur(10px);
   mix-blend-mode: screen;
-  opacity: 0.55;
+  opacity: 0.3;
+  transform: rotate(-8deg);
+  animation: vaporwave-scroll 14s linear infinite;
 }
-/* The two dominant colors sampled from the Floral Shoppe / "Lisa Frank 420" cover art. */
-.vaporwave-blob--pink {
-  top: -12%;
-  left: -12%;
-  background: #ff7f98;
-  animation: vaporwave-drift-a 16s ease-in-out infinite;
-}
-.vaporwave-blob--mint {
-  bottom: -18%;
-  right: -12%;
-  background: #5eeab4;
-  animation: vaporwave-drift-b 20s ease-in-out infinite;
-}
-@keyframes vaporwave-drift-a {
-  0%, 100% { transform: translate(-10%, -10%) scale(1); }
-  50% { transform: translate(12%, 6%) scale(1.15); }
-}
-@keyframes vaporwave-drift-b {
-  0%, 100% { transform: translate(10%, 10%) scale(1); }
-  50% { transform: translate(-15%, -6%) scale(1.2); }
+@keyframes vaporwave-scroll {
+  from { background-position: 0 0; }
+  to { background-position: 144px 144px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .vaporwave-blob {
+  .vaporwave-checkerboard {
     animation: none;
   }
 }
