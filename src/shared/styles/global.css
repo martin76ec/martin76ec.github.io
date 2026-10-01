@@ -141,15 +141,17 @@
   }
 }
 
-/* Drifting color blobs, screen-blended so they glow instead of muddying. */
+/* Drifting color blobs. `lighten` (not `screen`) so they still glow over
+   the dark page but overlapping blobs take the brighter channel instead
+   of additively blowing out toward white. */
 .vaporwave-blob {
   position: absolute;
   width: 68vmax;
   height: 68vmax;
   border-radius: 9999px;
   filter: blur(110px);
-  mix-blend-mode: screen;
-  opacity: 0.35;
+  mix-blend-mode: lighten;
+  opacity: 0.4;
 }
 .vaporwave-blob--pink {
   top: -12%;
