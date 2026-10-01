@@ -141,28 +141,28 @@
   }
 }
 
-/* Drifting color blobs. `lighten` (not `screen`) so they still glow over
-   the dark page but overlapping blobs take the brighter channel instead
-   of additively blowing out toward white. */
+/* Drifting color blobs. Radial gradients fade to transparent on their own,
+   so no blur filter is needed, and no blend mode either: two overlapping
+   gradients just alpha-composite normally (mint painted over pink with
+   its own alpha), which is inherently bounded - it can't blow out toward
+   white the way screen/lighten's additive math can. The exact overlap
+   color is whatever that compositing produces, not a blend-mode guess. */
 .vaporwave-blob {
   position: absolute;
-  width: 68vmax;
-  height: 68vmax;
+  width: 70vmax;
+  height: 70vmax;
   border-radius: 9999px;
-  filter: blur(110px);
-  mix-blend-mode: lighten;
-  opacity: 0.5;
 }
 .vaporwave-blob--pink {
   top: -12%;
   left: -12%;
-  background: #ff7f98;
+  background: radial-gradient(circle, rgba(255, 127, 152, 0.7) 0%, rgba(255, 127, 152, 0.35) 32%, transparent 68%);
   animation: vaporwave-drift-a 16s ease-in-out infinite;
 }
 .vaporwave-blob--mint {
   bottom: -18%;
   right: -12%;
-  background: #5eeab4;
+  background: radial-gradient(circle, rgba(94, 234, 180, 0.7) 0%, rgba(94, 234, 180, 0.35) 32%, transparent 68%);
   animation: vaporwave-drift-b 20s ease-in-out infinite;
 }
 @keyframes vaporwave-drift-a {
