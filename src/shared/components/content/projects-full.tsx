@@ -16,7 +16,7 @@ function Highlight({ text, query }: { text: string; query: string }) {
     <>
       {parts.map((part, i) =>
         part.toLowerCase() === query.toLowerCase() ? (
-          <span key={i} className="text-primary-foreground bg-primary">
+          <span key={i} className="bg-primary text-primary-foreground">
             {part}
           </span>
         ) : (
@@ -27,13 +27,7 @@ function Highlight({ text, query }: { text: string; query: string }) {
   );
 }
 
-export function ProjectCard({
-  project,
-  query,
-}: {
-  project: Project;
-  query: string;
-}) {
+export function ProjectCard({ project, query }: { project: Project; query: string }) {
   const { featured, accentColor } = project;
   return (
     <div
@@ -73,14 +67,11 @@ export function ProjectCard({
                 className={cn("gap-1", accentColor ? "project-card-accent-badge" : "border-primary text-primary")}
               >
                 <Star className="h-3 w-3 fill-current" />
-                {accentColor && <Star className="h-3 w-3 fill-current" />}
                 Featured
               </Badge>
             )}
           </div>
-          <p className="text-sm mb-4 text-muted-foreground md:text-base">
-            {project.description}
-          </p>
+          <p className="mb-4 text-sm text-muted-foreground md:text-base">{project.description}</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {project.skills.map((s) => (
@@ -129,13 +120,7 @@ export function ProjectsFull() {
         <motion.div layout className="flex flex-col gap-4">
           <AnimatePresence>
             {filteredProjects.map((p) => (
-              <motion.div
-                key={p.name}
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
+              <motion.div key={p.name} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                 <ProjectCard project={p} query={query} />
               </motion.div>
             ))}

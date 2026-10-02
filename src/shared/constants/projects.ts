@@ -3,7 +3,7 @@ import Musicfy from "@lib/assets/musicfy.png";
 import Portfolio from "@lib/assets/portfolio.png";
 import SvgBuilder from "@lib/assets/svg-builder.png";
 import Znotes from "@lib/assets/znotes.png";
-import EVals from "@lib/assets/e-vals.png"
+import EVals from "@lib/assets/e-vals.png";
 import SamVsYolo from "@lib/assets/sam-vs-yolo.png";
 import GlobalConnect from "@lib/assets/global-connect.png";
 import JepaLnn from "@lib/assets/jepa-lnn.png";
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     link: "https://play.google.com/store/apps/details?id=com.acodear.comy",
     skills: ["React Native", "Expo", "TypeScript", "Three.js"],
     featured: true,
-    accentColor: "#14b8ff",
+    accentColor: "#5eeab4",
   },
   {
     name: "Acodear",
@@ -37,6 +37,7 @@ export const projects: Project[] = [
     link: "https://www.acodear.com",
     skills: ["TypeScript", "Python", "Docker", "AWS"],
     featured: true,
+    accentColor: "#5eeab4",
   },
   {
     name: "SAM vs YOLO",
@@ -96,7 +97,7 @@ export const esProjects: Project[] = [
     link: "https://play.google.com/store/apps/details?id=com.acodear.comy",
     skills: ["React Native", "Expo", "TypeScript", "Three.js"],
     featured: true,
-    accentColor: "#14b8ff",
+    accentColor: "#5eeab4",
   },
   {
     name: "Acodear",
