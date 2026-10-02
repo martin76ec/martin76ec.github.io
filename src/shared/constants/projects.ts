@@ -7,7 +7,7 @@ import EVals from "@lib/assets/e-vals.png";
 import SamVsYolo from "@lib/assets/sam-vs-yolo.png";
 import GlobalConnect from "@lib/assets/global-connect.png";
 import JepaLnn from "@lib/assets/jepa-lnn.png";
-import ComyMascot from "@lib/assets/comy-focused.webp";
+import ComyIcon from "@lib/assets/comy-icon.png";
 
 export interface Project {
   name: string;
@@ -22,7 +22,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: "Comy",
-    image: ComyMascot.src,
+    image: ComyIcon.src,
     description:
       "Duolingo-style micro-lessons for learning AI — short daily challenges, streaks, XP and leagues, wrapped around a custom WebGL mascot animated from scratch.",
     link: "https://play.google.com/store/apps/details?id=com.acodear.comy",
@@ -91,7 +91,7 @@ export const projects: Project[] = [
 export const esProjects: Project[] = [
   {
     name: "Comy",
-    image: ComyMascot.src,
+    image: ComyIcon.src,
     description:
       "Microlecciones gamificadas para aprender IA, al estilo Duolingo — retos diarios cortos, rachas, XP y ligas, con una mascota animada en WebGL hecha desde cero.",
     link: "https://play.google.com/store/apps/details?id=com.acodear.comy",
