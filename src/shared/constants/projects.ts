@@ -7,6 +7,7 @@ import EVals from "@lib/assets/e-vals.png"
 import SamVsYolo from "@lib/assets/sam-vs-yolo.png";
 import GlobalConnect from "@lib/assets/global-connect.png";
 import JepaLnn from "@lib/assets/jepa-lnn.png";
+import ComyFluidTail from "@lib/assets/comy-fluid-tail.webp";
 
 export interface Project {
   name: string;
@@ -18,6 +19,15 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    name: "Comy",
+    image: ComyFluidTail.src,
+    description:
+      "Duolingo-style micro-lessons for learning AI — short daily challenges, streaks, XP and leagues, wrapped around a mascot with a custom WebGL fluid-tail animation built from scratch.",
+    link: "https://play.google.com/store/apps/details?id=com.acodear.comy",
+    skills: ["React Native", "Expo", "TypeScript", "Three.js"],
+    featured: true,
+  },
   {
     name: "Acodear",
     image: Acodear.src,
@@ -76,6 +86,15 @@ export const projects: Project[] = [
 ];
 
 export const esProjects: Project[] = [
+  {
+    name: "Comy",
+    image: ComyFluidTail.src,
+    description:
+      "Microlecciones gamificadas para aprender IA, al estilo Duolingo — retos diarios cortos, rachas, XP y ligas, con una mascota con animación de cola fluida en WebGL hecha desde cero.",
+    link: "https://play.google.com/store/apps/details?id=com.acodear.comy",
+    skills: ["React Native", "Expo", "TypeScript", "Three.js"],
+    featured: true,
+  },
   {
     name: "Acodear",
     image: Acodear.src,
