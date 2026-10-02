@@ -20,7 +20,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         className={cn(
           "group/project flex h-80 w-full cursor-pointer flex-col-reverse gap-4 overflow-hidden rounded-none bg-muted/50 px-6 py-4 backdrop-blur-md hover:bg-accent md:h-36 md:flex-row md:gap-8",
           featured &&
-            (accentColor ? "project-card-accent" : "border border-primary/60 bg-primary/5 hover:bg-primary/10")
+            (accentColor ? "project-card-accent" : "border border-primary bg-primary/5 hover:bg-primary/10")
         )}
       >
         <div className="flex min-w-fit flex-col pt-1">

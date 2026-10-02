@@ -40,7 +40,7 @@ export function ProjectCard({
       style={accentColor ? ({ "--project-accent": accentColor } as React.CSSProperties) : undefined}
       className={cn(
         "border-1 flex min-h-64 w-full select-none flex-col gap-2 rounded-none border border-muted/80 bg-muted/50 px-8 py-6 backdrop-blur-md hover:bg-accent md:flex-row md:gap-24 lg:gap-8",
-        featured && (accentColor ? "project-card-accent" : "border-primary/60 bg-primary/5 hover:bg-primary/10")
+        featured && (accentColor ? "project-card-accent" : "border-primary bg-primary/5 hover:bg-primary/10")
       )}
     >
       <div className="flex min-w-24 flex-col">
