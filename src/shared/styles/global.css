@@ -274,7 +274,7 @@
 /* A featured project can set --project-accent to use its own brand color
    instead of the generic primary-colored featured treatment. */
 .project-card-accent {
-  border-color: color-mix(in srgb, var(--project-accent) 60%, transparent);
+  border-color: var(--project-accent);
   background-color: color-mix(in srgb, var(--project-accent) 6%, transparent);
 }
 .project-card-accent:hover {
