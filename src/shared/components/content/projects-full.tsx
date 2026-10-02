@@ -86,8 +86,8 @@ export function ProjectCard({
           {project.skills.map((s) => (
             <Badge
               key={s}
-              variant={accentColor ? "outline" : undefined}
-              className={cn(accentColor && "project-card-accent-badge")}
+              variant={featured ? "outline" : undefined}
+              className={cn(featured && (accentColor ? "project-card-accent-badge" : "border-primary text-primary"))}
             >
               <Highlight text={s} query={query} />
             </Badge>
