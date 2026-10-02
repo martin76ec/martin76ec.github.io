@@ -73,6 +73,7 @@ export function ProjectCard({
                 className={cn("gap-1", accentColor ? "project-card-accent-badge" : "border-primary text-primary")}
               >
                 <Star className="h-3 w-3 fill-current" />
+                {accentColor && <Star className="h-3 w-3 fill-current" />}
                 Featured
               </Badge>
             )}
@@ -83,7 +84,11 @@ export function ProjectCard({
         </div>
         <div className="flex flex-wrap gap-2">
           {project.skills.map((s) => (
-            <Badge key={s}>
+            <Badge
+              key={s}
+              variant={accentColor ? "outline" : undefined}
+              className={cn(accentColor && "project-card-accent-badge")}
+            >
               <Highlight text={s} query={query} />
             </Badge>
           ))}
