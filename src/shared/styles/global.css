@@ -270,3 +270,23 @@
     animation: none;
   }
 }
+
+/* A featured project can set --project-accent to use its own brand color
+   instead of the generic primary-colored featured treatment. */
+.project-card-accent {
+  border-color: color-mix(in srgb, var(--project-accent) 60%, transparent);
+  background-color: color-mix(in srgb, var(--project-accent) 6%, transparent);
+}
+.project-card-accent:hover {
+  background-color: color-mix(in srgb, var(--project-accent) 12%, transparent);
+}
+.project-card-accent-border {
+  border-color: color-mix(in srgb, var(--project-accent) 60%, transparent);
+}
+.group\/project:hover .project-card-accent-border {
+  border-color: var(--project-accent);
+}
+.project-card-accent-badge {
+  border-color: var(--project-accent);
+  color: var(--project-accent);
+}

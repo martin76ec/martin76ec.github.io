@@ -12,20 +12,25 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  const { featured } = project;
+  const { featured, accentColor } = project;
   return (
     <a href={project.link} target="_blank" rel="noreferrer">
       <div
+        style={accentColor ? ({ "--project-accent": accentColor } as React.CSSProperties) : undefined}
         className={cn(
           "group/project flex h-80 w-full cursor-pointer flex-col-reverse gap-4 overflow-hidden rounded-none bg-muted/50 px-6 py-4 backdrop-blur-md hover:bg-accent md:h-36 md:flex-row md:gap-8",
-          featured && "border border-primary/60 bg-primary/5 hover:bg-primary/10"
+          featured &&
+            (accentColor ? "project-card-accent" : "border border-primary/60 bg-primary/5 hover:bg-primary/10")
         )}
       >
         <div className="flex min-w-fit flex-col pt-1">
           <div
             className={cn(
               "box-border w-fit rounded-none border border-muted-foreground/30 group-hover/project:border-muted-foreground/50",
-              featured && "border-primary/60 group-hover/project:border-primary"
+              featured &&
+                (accentColor
+                  ? "project-card-accent-border"
+                  : "border-primary/60 group-hover/project:border-primary")
             )}
           >
             <img
@@ -42,7 +47,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <div className="flex flex-wrap items-center gap-2">
               <p className="text-base text-foreground md:text-lg">{project.name}</p>
               {featured && (
-                <Badge variant="outline" className="gap-1 border-primary text-primary">
+                <Badge
+                  variant="outline"
+                  className={cn("gap-1", accentColor ? "project-card-accent-badge" : "border-primary text-primary")}
+                >
                   <Star className="h-3 w-3 fill-current" />
                   Featured
                 </Badge>
