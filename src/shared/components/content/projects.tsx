@@ -27,10 +27,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <div
             className={cn(
               "box-border w-fit rounded-none border border-muted-foreground/30 group-hover/project:border-muted-foreground/50",
-              featured &&
-                (accentColor
-                  ? "project-card-accent-border"
-                  : "border-primary/60 group-hover/project:border-primary")
+              featured && (accentColor ? "project-card-accent-border" : "border-primary")
             )}
           >
             <img

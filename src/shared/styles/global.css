@@ -281,9 +281,6 @@
   background-color: color-mix(in srgb, var(--project-accent) 12%, transparent);
 }
 .project-card-accent-border {
-  border-color: color-mix(in srgb, var(--project-accent) 60%, transparent);
-}
-.group\/project:hover .project-card-accent-border {
   border-color: var(--project-accent);
 }
 .project-card-accent-badge {
